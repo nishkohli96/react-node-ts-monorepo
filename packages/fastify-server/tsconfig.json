@@ -9,7 +9,7 @@
     "target": "es2017",
     "sourceMap": true,
     "outDir": "./build",
-    "baseUrl": "./",
+    "baseUrl": "src",
     "incremental": true
   }
 }

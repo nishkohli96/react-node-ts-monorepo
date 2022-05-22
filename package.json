@@ -1,15 +1,17 @@
 {
-    "name": "react-nestjs-monorepo",
-    "author": "Nishant Kohli",
-    "version": "1.0.0",
-    "private": true,
-    "workspaces": ["packages/*"],
-    "scripts": {
-        "frontend": "yarn workspace frontend start",
-        "frontend:test": "yarn workspace frontend test",
-        "frontend:build": "yarn workspace frontend build",
-        "frontend-ts": "yarn workspace frontend-ts start",
-        "backend": "yarn workspace backend start",
-        "backend:build": "yarn workspace backend build"
-    }
+	"name": "react-nestjs-monorepo",
+	"author": "Nishant Kohli",
+	"version": "1.0.0",
+	"private": true,
+	"workspaces": [
+		"packages/*"
+	],
+	"scripts": {
+		"frontend": "yarn workspace frontend start",
+		"frontend:test": "yarn workspace frontend test",
+		"frontend:build": "yarn workspace frontend build",
+		"frontend-ts": "yarn workspace frontend-ts start",
+		"backend": "yarn workspace fastify-server start",
+		"backend:build": "yarn workspace backend build"
+	}
 }
