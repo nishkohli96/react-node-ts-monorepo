@@ -1,15 +1,10 @@
-import { Module, NestModule } from '@nestjs/common';
-import { ConfigModule } from '@nestjs/config';
-import { HomeModule } from './app/home/home.module';
+import { Module } from '@nestjs/common';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
 
 @Module({
-  imports: [HomeModule,
-    ConfigModule.forRoot({
-      cache: true,
-    }),
-    ],
-  controllers: [],
-  providers: [],
+  imports: [],
+  controllers: [AppController],
+  providers: [AppService],
 })
-  
 export class AppModule {}
