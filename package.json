@@ -10,8 +10,7 @@
 		"frontend": "yarn workspace frontend start",
 		"frontend:test": "yarn workspace frontend test",
 		"frontend:build": "yarn workspace frontend build",
-		"frontend-ts": "yarn workspace frontend-ts start",
-		"backend": "yarn workspace fastify-server start",
-		"backend:build": "yarn workspace backend build"
+		"fastify-server": "yarn workspace fastify-server start",
+		"fastify-server:build": "yarn workspace fastify-server build"
 	}
 }

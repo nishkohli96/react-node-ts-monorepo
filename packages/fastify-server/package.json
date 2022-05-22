@@ -22,12 +22,12 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@fastify/compress": "^5.0.0",
     "@nestjs/common": "^8.0.0",
     "@nestjs/config": "^0.6.3",
     "@nestjs/core": "^8.0.0",
     "@nestjs/platform-express": "^8.4.5",
     "@nestjs/platform-fastify": "^8.4.5",
-    "fastify-compress": "^4.1.0",
     "pino-pretty": "^7.6.1",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
