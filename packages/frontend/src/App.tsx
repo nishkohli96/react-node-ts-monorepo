@@ -7,15 +7,15 @@ import { Loading } from 'shared';
 import Routing from 'routes';
 
 function App() {
-    return (
-        <Suspense fallback={<Loading />}>
-            <Provider store={store}>
-                <PersistGate loading={''} persistor={persistor}>
-                    <Routing />
-                </PersistGate>
-            </Provider>
-        </Suspense>
-    );
+	return (
+		<Suspense fallback={<Loading />}>
+			<Provider store={store}>
+				<PersistGate loading={''} persistor={persistor}>
+					<Routing />
+				</PersistGate>
+			</Provider>
+		</Suspense>
+	);
 }
 
 export default App;

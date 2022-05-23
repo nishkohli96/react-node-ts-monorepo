@@ -1,0 +1,13 @@
+{
+	"extends": "../../tsconfig.json",
+	"compilerOptions": {
+		"module": "commonjs",
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"sourceMap": false,
+		"outDir": "../../builds/fastify-server",
+		"baseUrl": "src",
+		"incremental": true,
+		"composite": true
+	}
+}
