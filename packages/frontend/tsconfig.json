@@ -2,7 +2,6 @@
 	"extends": "../../tsconfig.json",
 	"compilerOptions": {
 		"baseUrl": "src",
-		"composite": true,
-		"outDir": "../../builds/frontend"
+		"composite": true
 	}
 }
