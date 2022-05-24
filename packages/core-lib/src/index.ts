@@ -1,3 +1,3 @@
-import TextWithBadge from 'testcomp';
+import TextWithBadge from './TextWithBadge';
 
 export { TextWithBadge };

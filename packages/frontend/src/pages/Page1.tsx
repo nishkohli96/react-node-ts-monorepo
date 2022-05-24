@@ -23,8 +23,10 @@ const Page1: FC = () => {
 				ENvironment var -{' '}
 				<span className="text">{REACT_APP_TESTVAR}</span>
 			</div>
-			<div>
-				This component exported from <b>@core/lib</b>
+			<div style={{ margin: '10px 0px' }}>
+				<p>
+					This component exported from <b>@core/lib</b>
+				</p>
 				<TextWithBadge text="Sample Badge Text" badgeVal={5} />
 			</div>
 			<Button variant="outlined" onClick={() => navigate('/page-2')}>

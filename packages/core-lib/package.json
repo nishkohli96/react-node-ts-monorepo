@@ -2,7 +2,7 @@
 	"name": "@core/lib",
 	"version": "1.0.0",
 	"author": "Nishant Kohli",
-	"main": "./build",
+	"main": "./build/src/index.js",
 	"scripts": {
 		"build": "tsc --build"
 	},
