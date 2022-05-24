@@ -4,5 +4,6 @@
 		"baseUrl": "src",
 		"outDir": "build",
 		"composite": true
-	}
+	},
+	"include": ["src"]
 }

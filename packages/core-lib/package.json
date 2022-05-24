@@ -2,6 +2,7 @@
 	"name": "@core/lib",
 	"version": "1.0.0",
 	"author": "Nishant Kohli",
+	"main": "./build",
 	"scripts": {
 		"build": "tsc --build"
 	},
