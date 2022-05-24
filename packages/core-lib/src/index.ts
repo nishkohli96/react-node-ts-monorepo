@@ -1,3 +1,1 @@
-import TextWithBadge from './TextWithBadge';
-
-export { TextWithBadge };
+export * from './ui';

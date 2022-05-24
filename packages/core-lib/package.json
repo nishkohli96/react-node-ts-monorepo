@@ -2,7 +2,8 @@
 	"name": "@core/lib",
 	"version": "1.0.0",
 	"author": "Nishant Kohli",
-	"main": "./build/src/index.js",
+	"main": "./build/index.js",
+	"license": "MIT",
 	"scripts": {
 		"build": "tsc --build"
 	},
