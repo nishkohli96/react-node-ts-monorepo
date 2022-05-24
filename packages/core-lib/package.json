@@ -1,0 +1,16 @@
+{
+	"name": "core-lib",
+	"version": "1.0.0",
+	"author": "Nishant Kohli",
+	"scripts": {
+		"build": "tsc --build"
+	},
+	"peerDependencies": {
+		"react": "^18.1.0",
+		"react-dom": "^18.1.0"
+	},
+	"dependencies": {
+		"@mui/icons-material": "^5.8.0",
+		"@mui/material": "^5.8.0"
+	}
+}
