@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
     build:
-        runs-on: ubuntu-latest  
+        runs-on: ubuntu-latest
 
         strategy:
             matrix:
@@ -19,8 +19,14 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
+            - name: Build @core/lib
+              run: yarn build:lib
+
             - name: Install dependencies
               run: yarn install
 
-            - name: Build react-app
-              run: yarn build
+            - name: Build frontend
+              run: yarn frontend:build
+
+            - name: Build fastify-server
+              run: yarn fastify-server:build
