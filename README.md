@@ -15,9 +15,13 @@
 
 ## Get Started
 
+Install `node_modules`
+
+`yarn`
+
 Build the `@core/lib` first.
 
-`yarn build:lib`
+```yarn build:lib```
 
 Now start the `frontend` and `fastify-server` 
 
