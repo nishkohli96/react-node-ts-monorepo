@@ -4,9 +4,9 @@
 
 ## Features
 
-- React v18, nestJs v8.0.0
+- [React](https://reactjs.org/) v18, [NestJs](https://nestjs.com/) v8.0.0
 - Monorepo
-- Typescript
+- [Typescript](https://www.typescriptlang.org/)
 - [Prettier](https://prettier.io/) setup
 - Use `@core/lib` as a shared package 
 - [Mui](https://mui.com/), [Redux](https://redux.js.org/) and [Mobx](https://mobx.js.org/README.html) preconfigured.
@@ -17,17 +17,21 @@
 
 Install `node_modules`
 
-`yarn`
+```
+yarn
+```
 
 Build the `@core/lib` first.
 
-```yarn build:lib```
+```
+yarn build:lib
+```
 
 Now start the `frontend` and `fastify-server` 
 
 ```
-	yarn frontend
-	yarn fastify-server
+yarn frontend
+yarn fastify-server
 ```
 
 ## Support Me
