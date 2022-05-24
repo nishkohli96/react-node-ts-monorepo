@@ -4,6 +4,7 @@
 	"version": "1.0.0",
 	"private": true,
 	"dependencies": {
+		"@core/lib": "*",
 		"@emotion/react": "^11.9.0",
 		"@emotion/styled": "^11.8.1",
 		"@mui/icons-material": "^5.8.0",
