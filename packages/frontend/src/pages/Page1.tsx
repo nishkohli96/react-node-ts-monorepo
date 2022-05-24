@@ -4,6 +4,7 @@ import { observer } from 'mobx-react-lite';
 import Button from '@mui/material/Button';
 import { RootStore } from 'mobx-store';
 import { fetchBankInfo, useAppSelector, useAppDispatch } from 'redux-store';
+import { TextWithBadge } from '@core/lib';
 
 const Page1: FC = () => {
 	const navigate = useNavigate();
@@ -15,12 +16,18 @@ const Page1: FC = () => {
 
 	return (
 		<div className="root">
+			<div style={{ margin: '10px 0px' }}>
+				hi from Page1. Edit the code
+			</div>
 			<div>
 				ENvironment var -{' '}
 				<span className="text">{REACT_APP_TESTVAR}</span>
 			</div>
 			<div style={{ margin: '10px 0px' }}>
-				hi from Page1. Edit the code
+				<p>
+					This component exported from <b>@core/lib</b>
+				</p>
+				<TextWithBadge text="Sample Badge Text" badgeVal={5} />
 			</div>
 			<Button variant="outlined" onClick={() => navigate('/page-2')}>
 				Go to Page2

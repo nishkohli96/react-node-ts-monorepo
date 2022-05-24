@@ -23,5 +23,6 @@
 		"isolatedModules": true,
 		"noEmit": false,
 		"jsx": "react-jsx"
-	}
+	},
+	"exclude": ["node_modules", "build", "dist", "**/*.spec*"]
 }

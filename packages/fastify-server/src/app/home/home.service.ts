@@ -3,6 +3,7 @@ import { Injectable } from '@nestjs/common';
 @Injectable()
 export class HomeService {
 	getHello(): string {
-		return 'Hello World!!!';
+		const { ENV_VAR } = process.env;
+		return `Hello World, ${ENV_VAR} `;
 	}
 }

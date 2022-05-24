@@ -12,6 +12,7 @@
 		"frontend:build": "yarn workspace frontend build",
 		"fastify-server": "yarn workspace fastify-server start",
 		"fastify-server:build": "yarn workspace fastify-server build",
+		"build:lib": "yarn workspace @core/lib build",
 		"prettier": "prettier --write *",
 		"prepare": "husky install"
 	},
