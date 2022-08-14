@@ -4,10 +4,12 @@
 		"module": "commonjs",
 		"emitDecoratorMetadata": true,
 		"experimentalDecorators": true,
+		"rootDir": "src",
 		"sourceMap": false,
-		"outDir": "../../builds/fastify-server",
+		"outDir": "./build",
 		"baseUrl": "src",
 		"incremental": true,
 		"composite": true
-	}
+	},
+	"exclude": ["./test", "./build/**/*"]
 }
