@@ -16,6 +16,7 @@
 ## Get Started
 
 Place the shared packages in the `packages` folder & the applications code in the `apps` folder.
+If you do not wish to use Turborepo, clone the `yarn-workspaces` branch of this project.  
 
 Install `node_modules`
 
@@ -32,12 +33,7 @@ yarn build:lib
 Run the `frontend` and `fastify-server` in one command thanks to [Turborepo's Pipelines](https://turborepo.org/docs/core-concepts/pipelines)
 
 ```
-<<<<<<< HEAD
-	yarn dev
-=======
-yarn frontend
-yarn fastify-server
->>>>>>> origin/main
+yarn dev
 ```
 
 ## Support Me
