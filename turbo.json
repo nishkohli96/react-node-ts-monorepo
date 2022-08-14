@@ -5,7 +5,8 @@
 			"dependsOn": []
 		},
 		"dev": {
-			"dependsOn": ["^build:lib"]
+			"dependsOn": ["^build:lib"],
+			"cache": false
 		},
 		"build": {
 			"dependsOn": ["^build"]
@@ -20,11 +21,12 @@
 				"test/**/*.tsx"
 			]
 		},
-		"lint": {
+		"//#prettier": {
+			"dependsOn": [],
 			"outputs": []
 		},
 		"deploy": {
-			"dependsOn": ["build", "test", "lint"],
+			"dependsOn": ["build", "test", "prettier"],
 			"outputs": []
 		}
 	}
