@@ -11,6 +11,8 @@
 		"build:lib": "turbo run build:lib",
 		"dev": "turbo run dev --parallel --no-cache",
 		"build": "turbo run build",
+		"frontend:build": "yarn workspace frontend build",
+		"fastify-server:build": "yarn workspace fastify-server build",
 		"test": "turbo run test",
 		"prettier": "prettier --write *",
 		"prepare": "husky install"
