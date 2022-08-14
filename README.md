@@ -4,8 +4,8 @@
 
 ## Features
 
+- [Turborepo](https://turborepo.org/)
 - React v18, nestJs v8.0.0
-- Monorepo
 - Typescript
 - [Prettier](https://prettier.io/) setup
 - Use `@core/lib` as a shared package 

@@ -8,12 +8,10 @@
 		"packages/*"
 	],
 	"scripts": {
-		"frontend": "yarn workspace frontend start",
-		"frontend:test": "yarn workspace frontend test",
-		"frontend:build": "yarn workspace frontend build",
-		"fastify-server": "yarn workspace fastify-server start",
-		"fastify-server:build": "yarn workspace fastify-server build",
-		"build:lib": "yarn workspace @core/lib build",
+		"build:lib": "turbo run build:lib",
+		"dev": "turbo run dev --parallel --no-cache",
+		"build": "turbo run build",
+		"test": "turbo run test",
 		"prettier": "prettier --write *",
 		"prepare": "husky install"
 	},
@@ -23,6 +21,7 @@
 	"devDependencies": {
 		"husky": "^8.0.1",
 		"lint-staged": "^12.4.1",
-		"prettier": "^2.6.2"
+		"prettier": "^2.6.2",
+		"turbo": "^1.4.3"
 	}
 }
