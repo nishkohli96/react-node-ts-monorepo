@@ -15,6 +15,8 @@
 
 ## Get Started
 
+Place the shared packages in the `packages` folder & the applications code in the `apps` folder.
+
 Install `node_modules`
 
 `yarn`
