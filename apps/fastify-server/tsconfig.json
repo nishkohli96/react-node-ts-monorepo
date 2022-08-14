@@ -8,6 +8,7 @@
 		"sourceMap": false,
 		"outDir": "./build",
 		"baseUrl": "src",
+		"noEmit": true,
 		"incremental": true,
 		"composite": true
 	},

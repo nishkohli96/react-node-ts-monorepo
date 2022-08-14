@@ -12,6 +12,7 @@ node_modules
 # production
 apps/**/build
 apps/**/dist
+**.tsbuildinfo
 
 # misc
 .DS_Store
