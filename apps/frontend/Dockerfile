@@ -2,26 +2,28 @@
 FROM node:17-alpine3.14 as phase1
 
 WORKDIR /app
-ENV NODE_ENV production
 
-# To prevent the "command tsc not found" issue
-# RUN npm i -g typescript
-
-# Run yarn only if package.json changes
-# copied tsconfig as core-lib's tsconfig extends rootDir's tsconfig
-COPY package.json .
-COPY tsconfig.json .
+# Can't use these stmt as husky doesnt get installed & unable to
+# create directories
+# ENV NODE_ENV production
+# USER node
 
 # first create these directories, else the copying won't work.
 RUN mkdir -p packages/core-lib
 RUN mkdir -p apps/frontend
 
-# copying only the required packages
-COPY ./packages/core-lib/package.json packages/core-lib
-COPY ./packages/core-lib packages/core-lib
+# Run yarn only if package.json changes
+# copied tsconfig as core-lib's tsconfig extends rootDir's tsconfig
+COPY --chown=node:node package.json .
+COPY --chown=node:node tsconfig.json .
 
-COPY ./apps/frontend/package.json apps/frontend
-COPY ./apps/frontend apps/frontend
+
+# copying only the required packages
+COPY --chown=node:node ./packages/core-lib/package.json packages/core-lib
+COPY --chown=node:node ./packages/core-lib packages/core-lib
+
+COPY --chown=node:node ./apps/frontend/package.json apps/frontend
+COPY --chown=node:node ./apps/frontend apps/frontend
 
 # install node_modules
 RUN npm install

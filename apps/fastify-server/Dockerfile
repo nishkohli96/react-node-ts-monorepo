@@ -2,8 +2,11 @@
 FROM node:17-alpine3.14 as phase1
 
 WORKDIR /app
-# Can't use this stmt as husky isnt installed & build fails
-#ENV NODE_ENV production
+
+# Can't use these stmt as husky doesnt get installed & unable to
+# create directories
+# ENV NODE_ENV production
+# USER node
 
 # first create these directories, else the copying won't work.
 RUN mkdir -p apps/fastify-server
