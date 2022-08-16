@@ -8,8 +8,8 @@
 		"build:lib": "tsc --build"
 	},
 	"dependencies": {
-		"@mui/icons-material": "^5.8.0",
-		"@mui/material": "^5.8.0",
-		"typescript": "^4.6.4"
+		"@mui/icons-material": "^5.8.4",
+		"@mui/material": "^5.10.0",
+		"typescript": "^4.7.4"
 	}
 }
