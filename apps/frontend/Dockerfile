@@ -2,6 +2,7 @@
 FROM node:17-alpine3.14 as phase1
 
 WORKDIR /app
+ENV NODE_ENV production
 
 # To prevent the "command tsc not found" issue
 # RUN npm i -g typescript

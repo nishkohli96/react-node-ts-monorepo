@@ -2,6 +2,7 @@
 FROM node:17-alpine3.14 as phase1
 
 WORKDIR /app
+ENV NODE_ENV production
 
 # Run yarn only if package.json changes
 COPY package.json .

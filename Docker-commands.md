@@ -33,3 +33,5 @@ docker-compose up [serviceName]  // eg. frontend-dev
 ```
 
 Add `--build` flag to rebuild and then restart containers.
+
+5. Read more about setting up production grade dockerfiles [here](https://www.tomray.dev/nestjs-docker-production)
