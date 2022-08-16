@@ -10,8 +10,9 @@
 - [Prettier](https://prettier.io/) setup
 - Use `@core/lib` as a shared package 
 - [Mui](https://mui.com/), [Redux](https://redux.js.org/) and [Mobx](https://mobx.js.org/README.html) preconfigured.
+- [Dockerize](https://docs.docker.com/) images
 - Easy to customise
-- Github Actions
+- Github Actions to test apps & docker images build
 
 ## Get Started
 

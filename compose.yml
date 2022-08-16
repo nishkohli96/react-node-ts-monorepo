@@ -1,0 +1,27 @@
+services:
+    # run frontend-prod build on Port 5000
+    frontend:
+        image: docker_username/frontend
+        build:
+            context: .
+            dockerfile: ./apps/frontend/Dockerfile
+        ports:
+            - '5000:80'
+
+    # run frontend in dev mode on Port 3000, with hot reloading
+    frontend-dev:
+        image: docker_username/frontend-dev
+        build:
+            context: .
+            dockerfile: ./apps/frontend/Dockerfile.dev
+        ports:
+            - '3000:3000'
+        volumes:
+            - '/app/node_modules'
+            - './apps/frontend:/app/apps/frontend'
+
+    # run as a service of another dockerfile, port 4000
+    fastify-server:
+        extends:
+            file: ./apps/fastify-server/compose.yml
+            service: fastify-server
