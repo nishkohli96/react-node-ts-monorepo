@@ -11,6 +11,7 @@
 		"build:lib": "turbo run build:lib",
 		"dev": "turbo run dev --parallel --no-cache",
 		"build": "turbo run build",
+		"frontend": "yarn workspace frontend dev",
 		"frontend:build": "yarn workspace frontend build",
 		"fastify-server:build": "yarn workspace fastify-server build",
 		"test": "turbo run test",

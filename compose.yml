@@ -1,7 +1,7 @@
 services:
     # run frontend-prod build on Port 5000
     frontend:
-        image: docker_userName/frontend
+        image: docker_username/frontend
         build:
             context: .
             dockerfile: ./apps/frontend/Dockerfile
@@ -10,7 +10,7 @@ services:
 
     # run frontend in dev mode on Port 3000, with hot reloading
     frontend-dev:
-        image: docker_userName/frontend-dev
+        image: docker_username/frontend-dev
         build:
             context: .
             dockerfile: ./apps/frontend/Dockerfile.dev

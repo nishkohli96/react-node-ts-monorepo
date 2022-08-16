@@ -1,6 +1,6 @@
 services:
     fastify-server:
-        image: docker_userName/fastify-server
+        image: docker_username/fastify-server
         build:
             context: ../../
             dockerfile: ./apps/fastify-server/Dockerfile
