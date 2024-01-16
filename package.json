@@ -1,31 +1,31 @@
 {
-	"name": "react-nestjs-monorepo",
-	"author": "Nishant Kohli",
-	"version": "1.0.0",
-	"private": true,
-	"workspaces": [
-		"apps/*",
-		"packages/*"
-	],
-	"scripts": {
-		"prepare": "husky install",
-		"build:lib": "yarn workspace @core/lib build:lib",
-		"dev": "turbo run dev --parallel --no-cache",
-		"build": "turbo run build",
-		"frontend": "yarn workspace frontend dev",
-		"frontend:build": "yarn workspace frontend build",
-		"fastify-server": "yarn workspace fastify-server dev",
-		"fastify-server:build": "yarn workspace fastify-server build",
-		"test": "turbo run test",
-		"prettier": "prettier --write *"
-	},
-	"devDependencies": {
-		"husky": "^8.0.3",
-		"lint-staged": "^15.2.0",
-		"prettier": "^3.2.2",
-		"turbo": "^1.11.3"
-	},
-	"lint-staged": {
-		"**/*": "prettier --write --ignore-unknown"
-	}
+  "name": "react-nestjs-monorepo",
+  "author": "Nishant Kohli",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "prepare": "husky install",
+    "build:lib": "yarn workspace @core/lib build:lib",
+    "dev": "turbo run dev --parallel --no-cache",
+    "build": "turbo run build",
+    "frontend": "yarn workspace frontend dev",
+    "frontend:build": "yarn workspace frontend build",
+    "fastify-server": "yarn workspace fastify-server dev",
+    "fastify-server:build": "yarn workspace fastify-server build",
+    "test": "turbo run test",
+    "prettier": "prettier --write *"
+  },
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.2.2",
+    "turbo": "^1.11.3"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  }
 }

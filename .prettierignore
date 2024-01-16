@@ -1,22 +1,23 @@
-public
-build
-dist
+**/public
+**/build
+**/dist
+**/images
+**/icons
 
-src/assets/images
-src/assets/icons
-
-.env
-.env.prod
-.env.testing
+**/*.env.*
 
 .eslintrc.json
 .eslintcache
-
 .gitignore
 .prettierignore
 .prettierrc
+turbo.json
+
+**/package.json
+**/tsconfig.json
+**/*.yml
+**/*.md
+**/README.md
 
 yarn.lock
 yarn-error.log
-
-README.md

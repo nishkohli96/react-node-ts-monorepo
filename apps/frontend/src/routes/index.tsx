@@ -6,15 +6,15 @@ const Page2 = lazy(() => import('pages/Page2'));
 const Page404 = lazy(() => import('pages/Page404'));
 
 const Routing: FC = () => {
-	return (
-		<BrowserRouter>
-			<Routes>
-				<Route path="/" element={<Page1 />} />
-				<Route path="/page-2" element={<Page2 />} />
-				<Route element={<Page404 />} />
-			</Routes>
-		</BrowserRouter>
-	);
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Page1 />} />
+        <Route path="/page-2" element={<Page2 />} />
+        <Route element={<Page404 />} />
+      </Routes>
+    </BrowserRouter>
+  );
 };
 
 export default Routing;
