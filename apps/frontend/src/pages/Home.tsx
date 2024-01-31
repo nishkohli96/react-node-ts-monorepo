@@ -1,35 +1,34 @@
-import { FC } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { observer } from 'mobx-react-lite';
-import Button from '@mui/material/Button';
-import { fetchBankInfo, useAppSelector, useAppDispatch } from 'redux-store';
+import { Fragment } from 'react';
+import Typography from '@mui/material/Typography';
 import { TextWithBadge } from '@core/lib';
+import { useGetFirstNPokemonQuery } from 'redux-store';
+import { Loading } from 'shared';
 
-const Page1: FC = () => {
-  const navigate = useNavigate();
-  const bankInfo = useAppSelector((state) => state.bank.bankInfo);
-  const dispatch = useAppDispatch();
-
-  const { REACT_APP_TESTVAR } = process.env;
+const HomePage = () => {
+  const { data: pokemonList, isLoading } = useGetFirstNPokemonQuery(10);
 
   return (
     <div className="root">
-      <div style={{ margin: '10px 0px' }}>hi from Page1. Edit the code</div>
+      <div style={{ margin: '10px 0px' }}>Hello from the HomePage.</div>
       <div style={{ margin: '10px 0px' }}>
         <p>
           This component exported from <b>@core/lib</b>
         </p>
         <TextWithBadge text="Sample Badge Text" badgeVal={5} />
       </div>
-      <Button variant="outlined" onClick={() => navigate('/page-2')}>
-        Go to Page2
-      </Button>
-      <Button onClick={() => dispatch(fetchBankInfo({ ifsc: 'KARB0000001' }))}>
-        Get Bank Info
-      </Button>
-      <div>Fetched Bank Info: {JSON.stringify(bankInfo)}</div>
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <Fragment>
+          {Boolean(pokemonList?.length)
+            ? pokemonList?.map((pokemon, idx) => (
+                <Typography color='primary' key={idx}>{pokemon.name}</Typography>
+              ))
+            : 'Unable to fetch pokemons'}
+        </Fragment>
+      )}
     </div>
   );
 };
 
-export default observer(Page1);
+export default HomePage;

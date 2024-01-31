@@ -7,31 +7,37 @@ import {
   PAUSE,
   PERSIST,
   PURGE,
-  REGISTER,
+  REGISTER
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import bankInfoReducer from './bankInfo.slice';
-
-const rootReducer = combineReducers({
-  bank: bankInfoReducer,
-});
+import { settingsSlice } from './reducers';
+import { pokeApi } from './services';
 
 const persistConfig = {
   key: 'root',
-  storage,
+  storage
 };
+
+const rootReducer = combineReducers({
+  settings: settingsSlice.reducer
+});
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 /* https://redux.js.org/style-guide/style-guide#do-not-put-non-serializable-values-in-state-or-actions */
 export const store = configureStore({
-  reducer: persistedReducer,
-  middleware: (getDefaultMiddleware) =>
+  reducer: {
+    appConfig: persistedReducer,
+    [pokeApi.reducerPath]: pokeApi.reducer
+  },
+  middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-      },
-    }),
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER]
+      }
+    }).concat([pokeApi.middleware])
 });
 
 export const persistor = persistStore(store);
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;

@@ -1,5 +1,10 @@
-import { FC } from 'react';
+import CircularProgress from '@mui/material/CircularProgress';
 
-const Loading: FC = () => <div>Page Loading...</div>;
+const Loading = () => (
+  <div>
+    Loading...
+    <CircularProgress />
+  </div>
+);
 
 export default Loading;
