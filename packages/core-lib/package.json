@@ -5,11 +5,11 @@
   "main": "./dist/index.js",
   "license": "MIT",
   "scripts": {
-    "build:lib": "tsc --build"
+    "lib:build": "tsc --build"
   },
   "dependencies": {
-    "@mui/icons-material": "^5.15.4",
-    "@mui/material": "^5.15.4",
-    "typescript": "^4.7.3"
+    "@mui/icons-material": "^5.15.6",
+    "@mui/material": "^5.15.6",
+    "typescript": "^5.3.3"
   }
 }

@@ -1,23 +1,39 @@
-**/public
-**/build
-**/dist
-**/images
-**/icons
+# folders
+node_modules
+public
+build
+dist
+.next
+.vercel
 
-**/*.env.*
-
-.eslintrc.json
+# config-files
+tsconfig.json
+package.json
+turbo.json
+yarn.lock
+package-lock.json
+.eslintrc
+.eslintc.*
 .eslintcache
 .gitignore
 .prettierignore
 .prettierrc
-turbo.json
+.prettierrc.*
+.tsbuildifo
 
-**/package.json
-**/tsconfig.json
-**/*.yml
-**/*.md
-**/README.md
+# static asset files
+*.jpg
+*.jpeg
+*.png
+*.svg
+*.otf
+*.ttf
+*.woff
 
-yarn.lock
-yarn-error.log
+# custom files
+*.md
+*.log
+*.d.ts
+*.yml
+*.yaml
+**/*.env.*

@@ -27,7 +27,7 @@ COPY --chown=node:node ./apps/frontend apps/frontend
 
 # install node_modules
 RUN npm install
-RUN yarn build:lib
+RUN yarn lib:build
 
 # build frontend
 RUN yarn frontend:build

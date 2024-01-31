@@ -8,8 +8,8 @@
     "packages/*"
   ],
   "scripts": {
-    "prepare": "husky install",
-    "build:lib": "yarn workspace @core/lib build:lib",
+    "prepare": "husky",
+    "lib:build": "yarn workspace @core/lib lib:build",
     "dev": "turbo run dev --parallel --no-cache",
     "build": "turbo run build",
     "frontend": "yarn workspace frontend dev",
@@ -20,10 +20,12 @@
     "prettier": "prettier --write *"
   },
   "devDependencies": {
-    "husky": "^8.0.3",
-    "lint-staged": "^15.2.0",
-    "prettier": "^3.2.2",
-    "turbo": "^1.11.3"
+    "@nish1896/eslint-config": "^1.0.3",
+    "eslint": "^8.56.0",
+    "husky": "^9.0.7",
+    "lint-staged": "^15.2.1",
+    "prettier": "^3.2.4",
+    "turbo": "^1.12.0"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
