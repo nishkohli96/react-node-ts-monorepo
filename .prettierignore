@@ -31,6 +31,10 @@ package-lock.json
 *.woff
 
 # custom files
+*.js
+*.jsx
+*.ts
+*.tsx
 *.md
 *.log
 *.d.ts

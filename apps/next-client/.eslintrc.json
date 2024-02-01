@@ -2,5 +2,8 @@
   "extends": [
     "next/core-web-vitals",
     "@nish1896"
-  ]
+  ],
+  "rules": {
+    "no-mixed-spaces-and-tabs": "off"
+  }
 }

@@ -13,10 +13,10 @@ const AppTheme = (mode: PaletteMode) => ({
   breakpoints: {
     values: {
       xs: 0,
-      sm: 600,
+      sm: 350,
       md: 768,
       lg: 1024,
-      xl: 1200,
+      xl: 1400,
     },
   },
   /* Overriding the default styles of a component */
