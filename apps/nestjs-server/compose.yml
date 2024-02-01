@@ -1,0 +1,9 @@
+services:
+    fastify-server:
+        image: docker_username/fastify-server
+        build:
+            context: ../../
+            dockerfile: ./apps/fastify-server/Dockerfile
+        # command: ['node', './apps/server/dist/main.js']
+        ports:
+            - '4000:4000'
