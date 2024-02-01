@@ -8,20 +8,19 @@ node_modules
 .next
 .vercel
 
-# testing
-/coverage
-
 # production
 build
 dist
-**.tsbuildinfo
+*.tsbuildinfo
+
+# testing
+/coverage
 
 # misc
 .DS_Store
-**/.env.*
-
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
+.env
+.env.*
+*.log
+.pnp.js
+*.pem
 next-env.d.ts

@@ -7,19 +7,23 @@ dist
 .vercel
 
 # config-files
-tsconfig.json
+nest-cli.json
 package.json
+package-lock.json
+test/jest-e2e.json
+tsconfig.json
+tsconfig.build.json
 turbo.json
 yarn.lock
-package-lock.json
+
 .eslintrc
-.eslintc.*
+.eslintrc.*
 .eslintcache
 .gitignore
 .prettierignore
 .prettierrc
 .prettierrc.*
-.tsbuildifo
+.tsbuildinfo
 
 # static asset files
 *.jpg
@@ -40,4 +44,3 @@ package-lock.json
 *.d.ts
 *.yml
 *.yaml
-**/*.env.*
