@@ -27,6 +27,7 @@
     "web-vitals": "^3.5.2"
   },
   "devDependencies": {
+    "@nish1896/eslint-config": "^1.0.3",
     "@testing-library/jest-dom": "^6.4.0",
     "@testing-library/react": "^14.2.0",
     "@testing-library/user-event": "^14.5.2",
@@ -38,6 +39,7 @@
     "@types/react-redux": "^7.1.33",
     "@typescript-eslint/eslint-plugin": "^6.18.1",
     "@typescript-eslint/parser": "^6.18.1",
+    "eslint": "^8.56.0",
     "typescript": "^5.3.3"
   },
   "browserslist": {

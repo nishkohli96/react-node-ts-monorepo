@@ -9,10 +9,12 @@ const HomePage = () => {
 
   return (
     <div className="root">
-     <div style={{ margin: '10px 0px' }}>Hello from the HomePage.</div>
+      <div style={{ margin: '10px 0px' }}>Hello from the HomePage.</div>
       <div style={{ margin: '10px 0px' }}>
         <p>
-          This component exported from <b>@core/lib</b>
+          This component exported from
+          {' '}
+          <b>@core/lib</b>
         </p>
         <TextWithBadge text="Sample Badge Text" badgeVal={5} />
       </div>
@@ -22,8 +24,10 @@ const HomePage = () => {
         <Fragment>
           {pokemonList?.length
             ? pokemonList?.map((pokemon, idx) => (
-                <Typography color='primary' key={idx}>{pokemon.name}</Typography>
-              ))
+              <Typography color="primary" key={idx}>
+                {pokemon.name}
+              </Typography>
+            ))
             : 'Unable to fetch pokemons'}
         </Fragment>
       )}

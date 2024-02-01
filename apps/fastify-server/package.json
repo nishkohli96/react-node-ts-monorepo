@@ -13,6 +13,7 @@
     "start:debug": "nest start --debug --watch",
     "start:prod": "node build/main",
     "test": "jest",
+    "lint": "eslint --fix .",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",

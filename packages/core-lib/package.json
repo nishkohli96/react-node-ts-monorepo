@@ -5,11 +5,16 @@
   "main": "./dist/index.js",
   "license": "MIT",
   "scripts": {
-    "lib:build": "tsc --build"
+    "lib:build": "tsc --build",
+    "lint": "eslint --fix ."
   },
   "dependencies": {
     "@mui/icons-material": "^5.15.6",
     "@mui/material": "^5.15.6",
     "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@nish1896/eslint-config": "^1.0.3",
+    "eslint": "^8.56.0"
   }
 }

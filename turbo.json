@@ -4,6 +4,9 @@
     "lib:build": {
       "dependsOn": []
     },
+    "lint": {
+      "dependsOn": []
+    },
     "dev": {
       "dependsOn": ["^lib:build"],
       "cache": false

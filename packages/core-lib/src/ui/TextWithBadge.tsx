@@ -6,12 +6,12 @@ interface TextWithBadgeProps {
   badgeVal: number;
 }
 
-const TextWithBadge = (props: TextWithBadgeProps) => {
-  return (
-    <Badge badgeContent={props.badgeVal} color="primary">
-      <MailIcon color="action" /> {props.text}
-    </Badge>
-  );
-};
+const TextWithBadge = (props: TextWithBadgeProps) => (
+  <Badge badgeContent={props.badgeVal} color="primary">
+    <MailIcon color="action" />
+    {' '}
+    {props.text}
+  </Badge>
+);
 
 export default TextWithBadge;

@@ -16,9 +16,7 @@ async function bootstrap() {
       ignoreTrailingSlash: true,
       caseSensitive: false,
     }),
-    {
-      logger: ['error', 'warn'],
-    },
+    { logger: ['error', 'warn'] },
   );
 
   /**

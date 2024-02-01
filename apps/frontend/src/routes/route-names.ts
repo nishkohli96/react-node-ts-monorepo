@@ -7,11 +7,9 @@
 const RouteNames = {
   home: '/',
   account: {
-	rootPath: '/account',
-	subRoutes: {
-		manage: 'manage'
-	}
-  } 
+    rootPath: '/account',
+    subRoutes: { manage: 'manage' },
+  },
 };
 
 export default RouteNames;
