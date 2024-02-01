@@ -9,7 +9,7 @@ const HomePage = () => {
 
   return (
     <div className="root">
-      <div style={{ margin: '10px 0px' }}>Hello from the HomePage.</div>
+     <div style={{ margin: '10px 0px' }}>Hello from the HomePage.</div>
       <div style={{ margin: '10px 0px' }}>
         <p>
           This component exported from <b>@core/lib</b>
@@ -20,7 +20,7 @@ const HomePage = () => {
         <Loading />
       ) : (
         <Fragment>
-          {Boolean(pokemonList?.length)
+          {pokemonList?.length
             ? pokemonList?.map((pokemon, idx) => (
                 <Typography color='primary' key={idx}>{pokemon.name}</Typography>
               ))

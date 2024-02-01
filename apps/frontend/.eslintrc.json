@@ -1,0 +1,22 @@
+{
+  "extends": ["@nish1896"]
+//   "env": {
+// 	"node": true,
+//     "browser": true,
+//     /** use "test or expect" without any lint err  */
+//     "jest": true
+//   },
+//   "extends": [
+//     "eslint:recommended",
+//     "plugin:@typescript-eslint/recommended",
+//     "plugin:react/recommended",
+//     "plugin:react-hooks/recommended",
+//     "plugin:jsx-a11y/recommended"
+//   ],
+//   "parser": "@typescript-eslint/parser",
+//   "plugins": ["@typescript-eslint"],
+//   "rules": {
+// 	"no-mixed-spaces-and-tabs": "off"
+//   }
+}
+  
