@@ -6,21 +6,21 @@ const authRouter = Router();
 
 authRouter.get(
   '/test',
-  async function printHello(_, res: Response) {
+  function printHello(_, res: Response) {
     return res.status(200).send('Hello World !!').end();
-  }
+  },
 );
 
 /* Login user */
 authRouter.post(
   '/login',
-  async function loginUser(
+  function loginUser(
     req: Request<object, object, AuthTypes.UserLoginBody>,
-    res: Response
+    res: Response,
   ) {
     const { email, password } = req.body;
-    return await authService.loginUser(res, email, password);
-  }
+    return authService.loginUser(res, email, password);
+  },
 );
 
 export { authRouter };

@@ -1,12 +1,12 @@
 import { Response } from 'express';
 
 class AuthService {
-  async loginUser(res: Response, email: string, password: string) {
+  loginUser(res: Response, email: string, password: string) {
     try {
-      res.send({
+      res.status(200).send({
         email,
         password,
-      });
+      }).end();
     } catch (err) {
       res.status(500).send('Internal Server Error');
     }

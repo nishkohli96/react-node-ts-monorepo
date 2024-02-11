@@ -4,10 +4,10 @@ import { winstonLogger } from './winston-logger';
 export function validateAuthHeader(
   req: Request<object, object, object, object>,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) {
   /* Check presence of jwt and refresh-token */
-  let token: string | undefined = req.cookies?.['jwt'];
+  const token: string | undefined = req.cookies?.jwt;
 
   if (!token) {
     const errorMsg = 'Unauthorized request';
@@ -22,7 +22,7 @@ export function validateAuthHeader(
 export function authenticateAdmin(
   _: Request<object, object, object, object>,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) {
   if (res.locals?.user?.role === 'Admin') {
     next();
@@ -37,7 +37,7 @@ export function checkTokenMismatchInReqParams(
   /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
   req: Request<any, object, object, object>,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) {
   if (res.locals?.user?._id !== req.params.id) {
     return res.status(406).send('Token Mismatch').end();

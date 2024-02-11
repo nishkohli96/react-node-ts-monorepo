@@ -5,6 +5,4 @@
 
 const env = process.env;
 
-export const ENV_VARS = Object.freeze({
-  port: env.port ?? 5000,
-});
+export const ENV_VARS = Object.freeze({ port: env.port ?? 5000 });

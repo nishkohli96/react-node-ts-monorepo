@@ -11,19 +11,19 @@ const customLevels = {
     warn: 1,
     info: 2,
     http: 3,
-    success: 4
+    success: 4,
   },
   colors: {
     error: 'bold red blackBG',
     warn: 'italic yellow',
     info: 'blue',
     http: 'magenta',
-    success: 'green'
+    success: 'green',
   },
 };
 
 const myFormat = printf(
-  ({ level, message, timestamp }) => `[ ${level} ]:: ${timestamp} - ${message}`
+  ({ level, message, timestamp }) => `[ ${level} ]:: ${timestamp} - ${message}`,
 );
 
 /**
@@ -46,7 +46,7 @@ const winstonLogger = createLogger({
 
     /* Aligns in a tabular format */
     // format.align(),
-    myFormat
+    myFormat,
   ),
   //   defaultMeta: { service: 'log-service' },
   transports: [
@@ -71,7 +71,7 @@ addColors(customLevels.colors);
 
 if (process.env.NODE_ENV !== 'production') {
   winstonLogger.add(
-    new transports.Console({ format: format.colorize({ all: true }) })
+    new transports.Console({ format: format.colorize({ all: true }) }),
   );
 }
 

@@ -15,7 +15,7 @@ app.get('/', (_: Request, response: Response) => {
   response.status(200).send('Api is up & running!!!');
 });
 
-app.use(`/api/auth`, Routes.authRouter);
+app.use('/api/auth', Routes.authRouter);
 
 /* 404 Handler - To be written at last */
 app.get('*', (req: Request, response: Response) => {

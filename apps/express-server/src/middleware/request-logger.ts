@@ -4,7 +4,7 @@ import { winstonLogger } from './winston-logger';
 export function requestLogger(
   request: Request,
   response: Response,
-  next: NextFunction
+  next: NextFunction,
 ) {
   winstonLogger.info(`${request.method} ${request.url}`);
   response.on('finish', () => {
