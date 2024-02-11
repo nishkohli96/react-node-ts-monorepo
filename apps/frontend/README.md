@@ -1,20 +1,12 @@
 # frontend
 
-**A Template Repository for next [ReactJS](https://reactjs.org/) with the following features -**
+**[ReactJS](https://reactjs.org/) app with the following features -**
 
--   Latest version of [ReactJS](https://reactjs.org/).
--   Well-defined folder structure
--   Enabled Typescript support
--   Pre-configured routes
--   Sample [Redux](https://redux.js.org/) & [Mobx](https://mobx.js.org/README.html) store configured
--   Github Actions for checking build status
-
-`This Repository contains code for React v18.`
-
-I also have a [react-ts-v17](https://github.com/nishkohli96/react-ts-v17) template Repository.
-
-To upgrade your project from React v17 to 18 follow [this guide](https://reactjs.org/blog/2022/03/08/react-18-upgrade-guide.html).
-
-## Support Me
-
-If you found this template helpful and saved your valuable time, consider [buying me a coffee](https://www.buymeacoffee.com/nish1896)
+- Latest version of [ReactJS](https://reactjs.org/).
+- Well-defined folder structure
+- Enabled Typescript support
+- Pre-configured routes
+- [Mui](https://mui.com/) theme configured
+- Configured [Redux](https://redux.js.org/) store using [redux-toolkit](https://redux-toolkit.js.org/), which also takes care of api fetching
+- Github Actions for checking build status
+- Dockerfile configured

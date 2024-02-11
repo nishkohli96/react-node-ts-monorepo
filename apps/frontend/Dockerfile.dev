@@ -21,6 +21,6 @@ COPY ./apps/frontend apps/frontend
 
 # install node_modules
 RUN npm install
-RUN yarn build:lib
+RUN yarn lib:build
 
 CMD [ "yarn", "frontend" ]

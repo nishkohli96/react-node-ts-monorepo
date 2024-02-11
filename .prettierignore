@@ -1,22 +1,46 @@
+# folders
+node_modules
 public
 build
 dist
+.next
+.vercel
 
-src/assets/images
-src/assets/icons
+# config-files
+nest-cli.json
+package.json
+package-lock.json
+test/jest-e2e.json
+tsconfig.json
+tsconfig.build.json
+turbo.json
+yarn.lock
 
-.env
-.env.prod
-.env.testing
-
-.eslintrc.json
+.eslintrc
+.eslintrc.*
 .eslintcache
-
 .gitignore
 .prettierignore
 .prettierrc
+.prettierrc.*
+.tsbuildinfo
 
-yarn.lock
-yarn-error.log
+# static asset files
+*.jpg
+*.jpeg
+*.png
+*.svg
+*.otf
+*.ttf
+*.woff
 
-README.md
+# custom files
+*.js
+*.jsx
+*.ts
+*.tsx
+*.md
+*.log
+*.d.ts
+*.yml
+*.yaml
