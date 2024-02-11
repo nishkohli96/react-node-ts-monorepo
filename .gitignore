@@ -1,12 +1,13 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
+# folders
 node_modules
 .pnp
 .pnp.js
 .turbo
 .next
 .vercel
+logs
 
 # production
 build
@@ -15,6 +16,7 @@ dist
 
 # testing
 /coverage
+/.nyc_output
 
 # misc
 .DS_Store
@@ -24,3 +26,19 @@ dist
 .pnp.js
 *.pem
 next-env.d.ts
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json

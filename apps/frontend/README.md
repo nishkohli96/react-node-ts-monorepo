@@ -1,6 +1,6 @@
 # frontend
 
-**A Template Repository for [ReactJS](https://reactjs.org/) with the following features -**
+**[ReactJS](https://reactjs.org/) app with the following features -**
 
 - Latest version of [ReactJS](https://reactjs.org/).
 - Well-defined folder structure

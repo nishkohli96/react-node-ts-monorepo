@@ -1,4 +1,3 @@
-module.exports = {
-	extends: ['@nish1896']
-}
-  
+// module.exports = {
+// 	extends: ['@nish1896']
+// }

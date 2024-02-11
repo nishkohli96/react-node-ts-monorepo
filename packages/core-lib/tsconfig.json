@@ -8,5 +8,8 @@
     "incremental": false
   },
   "include": ["src"],
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  },
   "exclude": ["node_modules", "**/__tests__/*", "build"]
 }

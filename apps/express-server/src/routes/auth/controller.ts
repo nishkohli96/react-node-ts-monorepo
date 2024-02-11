@@ -7,7 +7,7 @@ const authRouter = Router();
 authRouter.get(
   '/test',
   async function printHello(_, res: Response) {
-    return res.status(200).send('Hello World !!');
+    return res.status(200).send('Hello World !!').end();
   }
 );
 

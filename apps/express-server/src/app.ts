@@ -1,6 +1,6 @@
 import express, { Express, Request, Response } from 'express';
 import cors from 'cors';
-import { requestLogger, winstonLogger } from 'middleware';
+import { requestLogger } from 'middleware';
 import * as Routes from 'routes';
 
 const app: Express = express();

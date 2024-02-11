@@ -6,6 +6,5 @@
 const env = process.env;
 
 export const ENV_VARS = Object.freeze({
-  client_url: env.CLIENT_URL ?? 'http://localhost:3000/',
   port: env.port ?? 5000,
 });
