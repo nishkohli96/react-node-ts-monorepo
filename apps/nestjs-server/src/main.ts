@@ -18,7 +18,7 @@ async function bootstrap() {
     new FastifyAdapter({
       ignoreTrailingSlash: true,
       caseSensitive: false,
-    })
+    }),
   );
   await app.listen(4000);
 }

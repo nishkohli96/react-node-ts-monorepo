@@ -2315,14 +2315,14 @@
   dependencies:
     eslint-scope "5.1.1"
 
-"@nish1896/eslint-config@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@nish1896/eslint-config/-/eslint-config-1.0.3.tgz#cdaa3e7772ec276fb66a533d41ab7acfdf869de0"
-  integrity sha512-9L1Ul4S4hW4FpN8WwmrtLT92PY4ph+dTa8kM2fLU6H02j3/qosPQw+hVlBOI2ktlRe5iTxgS/3AXTpCQLKarVQ==
+"@nish1896/eslint-config@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@nish1896/eslint-config/-/eslint-config-1.0.4.tgz#ab9669ea5cbbd762b95bf17cb3163762c6e6e997"
+  integrity sha512-QmWgufEAoS4bZEAPgYzq7yA2DHCIG9A5TcYLGITsuNVuhmXuzzeWJA6iQIxm+9OotVrL1rvTHg1gBLzg4Mi5sw==
   dependencies:
-    "@stylistic/eslint-plugin" "^1.5.4"
-    "@typescript-eslint/eslint-plugin" "^6.19.0"
-    "@typescript-eslint/parser" "^6.19.0"
+    "@stylistic/eslint-plugin" "^1.6.1"
+    "@typescript-eslint/eslint-plugin" "^6.21.0"
+    "@typescript-eslint/parser" "^6.21.0"
     eslint-plugin-jsx-a11y "^6.8.0"
     eslint-plugin-react "^7.33.2"
     eslint-plugin-react-hooks "^4.6.0"
@@ -2511,7 +2511,7 @@
     "@stylistic/eslint-plugin-js" "1.6.1"
     "@typescript-eslint/utils" "^6.20.0"
 
-"@stylistic/eslint-plugin@^1.5.4":
+"@stylistic/eslint-plugin@^1.6.1":
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/@stylistic/eslint-plugin/-/eslint-plugin-1.6.1.tgz#011e408ad9a1dddfe9517ace9dd3b6ce9ef4b17b"
   integrity sha512-De7Sw86OtIf7SsMgjLCf4bTeI3085Plyh4l0Rg1V42BTFo/Q6Pz7Cbu31rEk/UHFiEna/YO8Hxj80jFP3ObrQw==
@@ -3154,7 +3154,7 @@
     semver "^7.3.7"
     tsutils "^3.21.0"
 
-"@typescript-eslint/eslint-plugin@^6.19.0":
+"@typescript-eslint/eslint-plugin@^6.21.0":
   version "6.21.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-6.21.0.tgz#30830c1ca81fd5f3c2714e524c4303e0194f9cd3"
   integrity sha512-oy9+hTPCUFpngkEZUSzbf9MxI65wbKFoQYsgPdILTfbUldp5ovUuphZVe4i30emU9M/kP+T64Di0mxl7dSw3MA==
@@ -3178,7 +3178,7 @@
   dependencies:
     "@typescript-eslint/utils" "5.62.0"
 
-"@typescript-eslint/parser@^5.4.2 || ^6.0.0", "@typescript-eslint/parser@^6.19.0":
+"@typescript-eslint/parser@^5.4.2 || ^6.0.0", "@typescript-eslint/parser@^6.21.0":
   version "6.21.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-6.21.0.tgz#af8fcf66feee2edc86bc5d1cf45e33b0630bf35b"
   integrity sha512-tbsV1jPne5CkFQCgPBcDOt30ItF7aJoZL997JSF7MhGQqOeT3svWRYxiqlfA5RUdlHN6Fi+EI9bxqbdyAUZjYQ==
