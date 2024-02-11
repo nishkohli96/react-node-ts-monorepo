@@ -12,11 +12,6 @@
     "lib:build": "yarn workspace @core/lib lib:build",
     "dev": "turbo run dev --parallel --no-cache",
     "build": "turbo run build",
-    "frontend": "yarn workspace frontend dev",
-    "frontend:build": "yarn workspace frontend build",
-    "fastify-server": "yarn workspace fastify-server dev",
-    "fastify-server:build": "yarn workspace fastify-server build",
-    "test": "turbo run test",
     "lint": "turbo run lint",
     "prettier": "prettier --write ,"
   },
