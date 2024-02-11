@@ -31,11 +31,7 @@ Build the `@core/lib` first.
 yarn lib:build
 ```
 
-Run the `frontend` and `fastify-server` in one command thanks to [Turborepo's Pipelines](https://turborepo.org/docs/core-concepts/pipelines)
-
-```
-yarn dev
-```
+Build, run, lint or test all your apps in one command thanks to [Turborepo's Pipelines](https://turborepo.org/docs/core-concepts/pipelines)
 
 ## Support Me
 
