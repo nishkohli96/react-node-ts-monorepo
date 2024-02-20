@@ -1,5 +1,5 @@
 # Base Image
-FROM node:17-alpine3.14 as phase1
+FROM node:20-alpine3.18 as phase1
 
 WORKDIR /app
 
@@ -14,8 +14,9 @@ RUN mkdir -p apps/frontend
 
 # Run yarn only if package.json changes
 # copied tsconfig as core-lib's tsconfig extends rootDir's tsconfig
-COPY --chown=node:node package.json .
+COPY --chown=node:node turbo.json .
 COPY --chown=node:node tsconfig.json .
+COPY --chown=node:node package.json .
 
 
 # copying only the required packages
@@ -30,8 +31,8 @@ RUN npm install
 RUN yarn lib:build
 
 # build frontend
-RUN yarn frontend:build
+RUN yarn build
 
 # Phase 2 - Get the Build and host on nginx
-FROM nginx:1.21.6-alpine
+FROM nginx:1.25.4-alpine
 COPY --from=phase1 /app/apps/frontend/build /usr/share/nginx/html

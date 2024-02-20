@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: ./apps/frontend/Dockerfile
     ports:
-      - '5000:80'
+      - '3000:80'
 
   # run frontend in dev mode on Port 3000, with hot reloading
   frontend-dev:
@@ -20,8 +20,19 @@ services:
       - '/app/node_modules'
       - './apps/frontend:/app/apps/frontend'
 
-  # run as a service of another dockerfile, port 4000
-  fastify-server:
-    extends:
-      file: ./apps/fastify-server/compose.yml
-      service: fastify-server
+  express-server:
+    image: docker_username/express-server
+    build:
+      context: .
+      dockerfile: ./apps/express-server/Dockerfile
+    ports:
+      - '5000:5000'
+
+  # somehow port mapping not working for this
+  nestjs-server:
+    image: docker_username/nestjs-server
+    build:
+      context: .
+      dockerfile: ./apps/nestjs-server/Dockerfile
+    ports:
+      - '4000:4000'
