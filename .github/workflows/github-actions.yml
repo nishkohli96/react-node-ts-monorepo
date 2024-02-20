@@ -23,20 +23,18 @@ jobs:
 
       - name: Install dependencies
         run: yarn
-
+      
       - name: Build @core/lib
-	      run: yarn lib:build
+        run: yarn lib:build
 
-	    - name: Build express-server
-	      run: yarn workspace express-server build
+      - name: Build express-server
+        run: yarn workspace express-server build
 
-	    - name: Build nestjs-server
-	      run: yarn workspace nestjs-server build
+      - name: Build nestjs-server
+        run: yarn workspace nestjs-server build
 
-	    - name: Build frontend
-	      run: yarn workspace frontend build
+      - name: Build frontend
+        run: yarn workspace frontend build
 
-	    - name: Build next-client
-	      run: yarn workspace next-client build
-
-		
+      - name: Build next-client
+        run: yarn workspace next-client build
