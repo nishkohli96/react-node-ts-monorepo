@@ -10,7 +10,7 @@ export function requestLogger(
   response.on('finish', () => {
     const isSuccess = response.statusCode === 200;
     winstonLogger.log(
-      isSuccess ? 'info': 'error',
+      isSuccess ? 'info' : 'error',
       `${response.statusCode} ${response.statusMessage}`,
     );
   });

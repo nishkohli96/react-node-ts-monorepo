@@ -3,11 +3,11 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 type Pokemon = {
   name: string;
   url: string;
-}
+};
 
 type PokeApiResult = {
   results: Pokemon[];
-}
+};
 
 export const pokeApi = createApi({
   reducerPath: 'pokeApi',
