@@ -35,10 +35,6 @@ yarn.lock
 *.woff
 
 # custom files
-*.js
-*.jsx
-*.ts
-*.tsx
 *.md
 *.log
 *.d.ts

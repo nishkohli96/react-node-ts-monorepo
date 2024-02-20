@@ -1,20 +1,15 @@
-import { Metadata } from 'next';
 import Image from 'next/image';
 import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
 import styles from './page.module.css';
 
-export const metaData: Metadata = {
-  title: 'Home Page',
-  description: 'home page for next-client app',
-  keywords: ['nextjs', 'react', 'next'],
-};
-
 export default function Home() {
   return (
     <main className={styles.main}>
       <Paper sx={{ padding: '10px' }}>
-        <Button color="primary" variant="contained">Mui Button</Button>
+        <Button color="primary" variant="contained">
+          Mui Button
+        </Button>
       </Paper>
       <div className={styles.description}>
         <p>
