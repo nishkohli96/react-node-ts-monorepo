@@ -13,15 +13,12 @@ COPY --chown=node:node package.json .
 RUN mkdir -p apps/nestjs-server
 
 # copying only the required packages
-COPY --chown=node:node ./apps/nestjs-server/package.json apps/nestjs-server
 COPY --chown=node:node ./apps/nestjs-server/tsconfig.*.json apps/nestjs-server
+COPY --chown=node:node ./apps/nestjs-server/package.json apps/nestjs-server
 COPY --chown=node:node ./apps/nestjs-server apps/nestjs-server
 
 # install node_modules
 RUN yarn
 
-# build nestjs-server
-RUN yarn build
-
-# run server in dev env
+# run server in prod env
 CMD ["yarn", "workspace", "nestjs-server", "start:prod"]

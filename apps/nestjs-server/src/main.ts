@@ -13,6 +13,14 @@ async function bootstrap() {
    * the line below...
    */
   // const app = await NestFactory.create(AppModule);
+
+  /**
+	 * Unfortunately NestJs prod build with fastify, works on local
+   * machine, but it does not port map on docker...
+	 *
+	 * Soln link -
+   * https://stackoverflow.com/questions/66086427/docker-container-with-nodejs-appnestjs-is-not-accessible-from-both-other-conta
+	 */
   const app = await NestFactory.create<NestFastifyApplication>(
     AppModule,
     new FastifyAdapter({
@@ -20,7 +28,7 @@ async function bootstrap() {
       caseSensitive: false,
     }),
   );
-  await app.listen(4000);
+  await app.listen(4000, '0.0.0.0');
 }
 
 bootstrap();
