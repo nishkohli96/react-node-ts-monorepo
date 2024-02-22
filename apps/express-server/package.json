@@ -4,9 +4,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nodemon -r tsconfig-paths/register src/index.ts",
+    "dev": "nodemon src/index.ts",
     "build": "rimraf dist && tsc",
-    "start": "NODE_ENV=production ts-node dist/index.js",
+    "start": "ts-node dist/index.js",
     "start:prod": "yarn build && yarn start",
     "lint": "eslint --fix ."
   },

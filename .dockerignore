@@ -1,0 +1,29 @@
+# folders
+node_modules
+.github
+.husky
+.next
+.turbo
+.vercel
+
+# production
+build
+dist
+logs
+*.tsbuildinfo
+
+# testing
+coverage
+.nyc_output
+
+# misc
+.gitignore
+.eslintrc
+.eslintrc.js
+.eslintignore
+.prettierrc
+.prettierignore
+*.log
+*.md
+# README is not ignored, but all other .md files are ignored.
+!README.md

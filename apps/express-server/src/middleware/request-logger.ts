@@ -8,7 +8,7 @@ export function requestLogger(
 ) {
   winstonLogger.info(`${request.method} ${request.url}`);
   response.on('finish', () => {
-    const isSuccess = response.statusCode === 200;
+    const isSuccess = response.statusCode < 400;
     winstonLogger.log(
       isSuccess ? 'info' : 'error',
       `${response.statusCode} ${response.statusMessage}`,

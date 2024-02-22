@@ -2,12 +2,12 @@
 
 # folders
 node_modules
+logs
 .pnp
 .pnp.js
 .turbo
 .next
 .vercel
-logs
 
 # production
 build
@@ -15,8 +15,8 @@ dist
 *.tsbuildinfo
 
 # testing
-/coverage
-/.nyc_output
+coverage
+.nyc_output
 
 # misc
 .DS_Store
