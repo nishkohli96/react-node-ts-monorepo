@@ -14,6 +14,7 @@ RUN mkdir -p apps/nestjs-server
 
 # copying only the required packages
 COPY --chown=node:node ./apps/nestjs-server/package.json apps/nestjs-server
+COPY --chown=node:node ./apps/nestjs-server/tsconfig.*.json apps/nestjs-server
 COPY --chown=node:node ./apps/nestjs-server apps/nestjs-server
 
 # install node_modules
