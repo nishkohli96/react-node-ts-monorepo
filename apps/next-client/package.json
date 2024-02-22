@@ -5,11 +5,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start:prod": "yarn run build && next start",
     "lint": "next lint --fix ."
   },
   "dependencies": {
     "@emotion/cache": "^11.11.0",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.15.10",
     "@mui/material": "^5.15.10",
     "@mui/material-nextjs": "^5.15.9",

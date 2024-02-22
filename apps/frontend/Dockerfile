@@ -3,11 +3,6 @@ FROM node:20-alpine3.18 as phase1
 
 WORKDIR /app
 
-# Can't use these stmt as husky doesnt get installed & unable to
-# create directories
-# ENV NODE_ENV production
-# USER node
-
 # first create these directories, else the copying won't work.
 RUN mkdir -p packages/core-lib
 RUN mkdir -p apps/frontend

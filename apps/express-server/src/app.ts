@@ -1,5 +1,6 @@
 import express, { Express, Request, Response } from 'express';
 import cors from 'cors';
+import { ENV_VARS } from 'app-constants';
 import { requestLogger } from 'middleware';
 import * as Routes from 'routes';
 
@@ -12,7 +13,7 @@ app.use(cors());
 app.use(requestLogger);
 
 app.get('/', (_: Request, response: Response) => {
-  response.status(200).send('Api is up & running!!!');
+  response.status(200).send(`ENV: ${ENV_VARS.env} - Api is up & running!!!`);
 });
 
 app.use('/api/auth', Routes.authRouter);

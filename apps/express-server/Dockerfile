@@ -23,4 +23,4 @@ RUN yarn
 RUN yarn build
 
 # run server in dev env
-CMD ["yarn", "workspace", "express-server", "build:run"]
+CMD ["yarn", "workspace", "express-server", "start"]

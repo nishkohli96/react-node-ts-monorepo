@@ -20,6 +20,14 @@ services:
       - '/app/node_modules'
       - './apps/frontend:/app/apps/frontend'
 
+  next-client:
+    image: docker_username/next-client
+    build:
+      context: .
+      dockerfile: ./apps/next-client/Dockerfile
+    ports:
+      - '3002:3000'
+
   express-server:
     image: docker_username/express-server
     build:
