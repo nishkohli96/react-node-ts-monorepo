@@ -4,13 +4,15 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nodemon -r tsconfig-paths/register src/index.ts",
-    "build": "rimraf dist & tsc",
-    "build:run": "ts-node dist/index.js",
+    "dev": "nodemon src/index.ts",
+    "build": "rimraf dist && tsc",
+    "start": "ts-node dist/index.js",
+    "start:prod": "yarn build && yarn start",
     "lint": "eslint --fix ."
   },
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.4.4",
     "express": "^4.18.2",
     "winston": "3.11.0"
   },

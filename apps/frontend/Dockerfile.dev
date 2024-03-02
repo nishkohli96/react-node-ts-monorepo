@@ -1,5 +1,5 @@
 # Base Image
-FROM node:17-alpine3.14 as phase1
+FROM node:20-alpine3.18 as phase1
 
 WORKDIR /app
 
@@ -23,4 +23,4 @@ COPY ./apps/frontend apps/frontend
 RUN npm install
 RUN yarn lib:build
 
-CMD [ "yarn", "frontend" ]
+CMD [ "yarn", "workspace", "frontend", "dev" ]

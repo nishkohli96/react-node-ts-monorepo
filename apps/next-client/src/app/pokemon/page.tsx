@@ -1,4 +1,3 @@
-import type { Metadata } from 'next';
 import MenuItem from '@mui/material/MenuItem';
 
 type Pokemon = {
@@ -8,11 +7,6 @@ type Pokemon = {
 
 type PokeApiResult = {
   results: Pokemon[];
-};
-
-export const metaData: Metadata = {
-  title: 'Pokemon List',
-  description: 'fetch pokemon list',
 };
 
 async function getData() {

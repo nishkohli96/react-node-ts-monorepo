@@ -1,4 +1,5 @@
 import { createLogger, addColors, format, transports } from 'winston';
+import { ENV_VARS } from 'app-constants';
 
 const { combine, timestamp, printf } = format;
 
@@ -69,7 +70,7 @@ addColors(customLevels.colors);
  * `${info.level}: ${info.message} JSON.stringify({ ...rest }) `
  */
 
-if (process.env.NODE_ENV !== 'production') {
+if (ENV_VARS.env !== 'production') {
   winstonLogger.add(
     new transports.Console({ format: format.colorize({ all: true }) }),
   );

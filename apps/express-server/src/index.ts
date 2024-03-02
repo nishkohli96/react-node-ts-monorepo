@@ -22,7 +22,9 @@ function bootstrap() {
   const server = createServer(app);
 
   server.listen(port, () => {
-    winstonLogger.info(`[ ⚡️ ${hostName} ⚡️ ] - Server running on port ${port}`);
+    winstonLogger.info(
+      `[ ⚡️ ${hostName} ⚡️ ] - Server running on port ${port}`,
+    );
   });
 }
 
