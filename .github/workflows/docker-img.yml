@@ -25,8 +25,8 @@
 #       - name: Build Server Image
 #         run: docker build -f ./apps/fastify-server/Dockerfile -t ${{secrets.DOCKER_HUB_USERNAME}}/rnm-server:${{ steps.date.outputs.date }} .
 
-#       - name: Build Frontend Image
-#         run: docker build -f ./apps/frontend/Dockerfile -t ${{ secrets.DOCKER_HUB_USERNAME }}/rnm-frontend:${{ steps.date.outputs.date }} .
+#       - name: Build react-client Image
+#         run: docker build -f ./apps/react-client/Dockerfile -t ${{ secrets.DOCKER_HUB_USERNAME }}/rnm-react-client:${{ steps.date.outputs.date }} .
 
 #       - name: Login to DockerHub
 #         uses: docker/login-action@v2
@@ -37,5 +37,5 @@
 #       - name: Push Backend Image to Docker Hub
 #         run: docker push  ${{ secrets.DOCKER_HUB_USERNAME }}/rnm-server:${{ steps.date.outputs.date }}
 
-#       - name: Push Frontend Image to Docker Hub
-#         run: docker push  ${{ secrets.DOCKER_HUB_USERNAME }}/rnm-frontend:${{ steps.date.outputs.date }}
+#       - name: Push react-client Image to Docker Hub
+#         run: docker push  ${{ secrets.DOCKER_HUB_USERNAME }}/rnm-react-client:${{ steps.date.outputs.date }}

@@ -1,33 +1,4 @@
 services:
-  # run frontend-prod build on Port 5000
-  frontend:
-    image: docker_username/frontend
-    build:
-      context: .
-      dockerfile: ./apps/frontend/Dockerfile
-    ports:
-      - '3000:80'
-
-  # run frontend in dev mode on Port 3000, with hot reloading
-  frontend-dev:
-    image: docker_username/frontend-dev
-    build:
-      context: .
-      dockerfile: ./apps/frontend/Dockerfile.dev
-    ports:
-      - '3001:3000'
-    volumes:
-      - '/app/node_modules'
-      - './apps/frontend:/app/apps/frontend'
-
-  next-client:
-    image: docker_username/next-client
-    build:
-      context: .
-      dockerfile: ./apps/next-client/Dockerfile
-    ports:
-      - '3002:3000'
-
   express-server:
     image: docker_username/express-server
     build:
@@ -44,3 +15,33 @@ services:
       dockerfile: ./apps/nestjs-server/Dockerfile
     ports:
       - '4000:4000'
+
+  # run react-client-prod build on Port 5000
+  react-client:
+    image: docker_username/react-client
+    build:
+      context: .
+      dockerfile: ./apps/react-client/Dockerfile
+    ports:
+      - '3000:80'
+
+  # run react-client in dev mode on Port 3000, with hot reloading
+  react-client-dev:
+    image: docker_username/react-client-dev
+    build:
+      context: .
+      dockerfile: ./apps/react-client/Dockerfile.dev
+    ports:
+      - '3001:3000'
+    volumes:
+      - '/app/node_modules'
+      - './apps/react-client:/app/apps/react-client'
+
+  next-client:
+    image: docker_username/next-client
+    build:
+      context: .
+      dockerfile: ./apps/next-client/Dockerfile
+    ports:
+      - '3002:3000'
+
