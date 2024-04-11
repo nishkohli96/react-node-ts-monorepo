@@ -6,9 +6,9 @@ const AppTheme = (mode: PaletteMode) => ({
     mode,
     common: {
       black: '#000',
-      white: '#fff',
+      white: '#fff'
     },
-    ...(mode === 'light' ? LightThemePalette : DarkThemePalette),
+    ...(mode === 'light' ? LightThemePalette : DarkThemePalette)
   },
   breakpoints: {
     values: {
@@ -16,8 +16,8 @@ const AppTheme = (mode: PaletteMode) => ({
       sm: 350,
       md: 768,
       lg: 1024,
-      xl: 1400,
-    },
+      xl: 1400
+    }
   },
   /* Overriding the default styles of a component */
   components: {
@@ -25,11 +25,11 @@ const AppTheme = (mode: PaletteMode) => ({
       styleOverrides: {
         root: {
           display: 'flex',
-          justifyContent: 'center',
-        },
-      },
-    },
-  },
+          justifyContent: 'center'
+        }
+      }
+    }
+  }
 });
 
 export default AppTheme;

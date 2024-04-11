@@ -16,7 +16,7 @@ export const pokeApi = createApi({
     prepareHeaders: headers => {
       headers.set('X-some-KEY', 'API_KEY');
       return headers;
-    },
+    }
   }),
   tagTypes: ['PokemonList'],
   endpoints: builder => ({
@@ -25,9 +25,9 @@ export const pokeApi = createApi({
       providesTags: ['PokemonList'],
       transformResponse: (rawResult: PokeApiResult) => rawResult.results,
       transformErrorResponse: (response: { status: string | number }) =>
-        response.status,
-    }),
-  }),
+        response.status
+    })
+  })
 });
 
 export const { useGetFirstNPokemonQuery } = pokeApi;
