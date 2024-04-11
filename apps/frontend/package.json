@@ -29,7 +29,7 @@
     "web-vitals": "^3.5.2"
   },
   "devDependencies": {
-    "@nish1896/eslint-config": "^1.0.4",
+    "@nish1896/eslint-config": "^2.0.2",
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^14.2.1",
     "@testing-library/user-event": "^14.5.2",
