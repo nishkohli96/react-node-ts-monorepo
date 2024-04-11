@@ -7,7 +7,7 @@ class AuthService {
         .status(200)
         .send({
           email,
-          password,
+          password
         })
         .end();
     } catch (err) {
