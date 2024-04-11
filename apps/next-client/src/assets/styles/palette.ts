@@ -13,12 +13,12 @@ export const LightThemePalette = {
   divider: '#9e9e9e',
   background: {
     default: '#FFFFFF',
-    paper: '#e0dfdc',
+    paper: '#e0dfdc'
   },
   text: {
     primary: '#121212',
-    secondary: '#4C4C4C',
-  },
+    secondary: '#4c4c4c'
+  }
 };
 
 export const DarkThemePalette = {
@@ -31,10 +31,10 @@ export const DarkThemePalette = {
   divider: '#4c4c4c',
   background: {
     default: '#1a1919',
-    paper: '#2b2b2b',
+    paper: '#2b2b2b'
   },
   text: {
     primary: '#f8f7ff',
-    secondary: '#f6e4df',
-  },
+    secondary: '#f6e4df'
+  }
 };

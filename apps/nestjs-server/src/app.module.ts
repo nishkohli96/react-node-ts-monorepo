@@ -4,6 +4,6 @@ import { HomeModule } from './routes';
 @Module({
   imports: [HomeModule],
   controllers: [],
-  providers: [],
+  providers: []
 })
 export class AppModule {}

@@ -1,7 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import {
   FastifyAdapter,
-  NestFastifyApplication,
+  NestFastifyApplication
 } from '@nestjs/platform-fastify';
 import { AppModule } from './app.module';
 
@@ -25,8 +25,8 @@ async function bootstrap() {
     AppModule,
     new FastifyAdapter({
       ignoreTrailingSlash: true,
-      caseSensitive: false,
-    }),
+      caseSensitive: false
+    })
   );
   await app.listen(4000, '0.0.0.0');
 }

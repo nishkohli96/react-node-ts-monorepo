@@ -14,7 +14,7 @@
     "typescript": "^5.3.3"
   },
   "devDependencies": {
-    "@nish1896/eslint-config": "^1.0.4",
+    "@nish1896/eslint-config": "^2.0.2",
     "eslint": "^8.56.0"
   }
 }

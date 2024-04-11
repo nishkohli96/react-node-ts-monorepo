@@ -23,7 +23,7 @@ function bootstrap() {
 
   server.listen(port, () => {
     winstonLogger.info(
-      `[ ⚡️ ${hostName} ⚡️ ] - Server running on port ${port}`,
+      `[ ⚡️ ${hostName} ⚡️ ] - Server running on port ${port}`
     );
   });
 }

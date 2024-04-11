@@ -7,7 +7,7 @@ type LayoutProps = {
 
 export const metadata: Metadata = {
   title: 'Pokemon',
-  description: 'List of pokemons',
+  description: 'List of pokemons'
 };
 
 export default function PokemonPageLayout({ children }: LayoutProps) {
@@ -15,7 +15,7 @@ export default function PokemonPageLayout({ children }: LayoutProps) {
     <Paper
       sx={{
         padding: '50px 20px',
-        borderRadius: 0,
+        borderRadius: 0
       }}
     >
       <div style={{ background: '#3d3d3d' }}>

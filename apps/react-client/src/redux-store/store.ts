@@ -7,7 +7,7 @@ import {
   PAUSE,
   PERSIST,
   PURGE,
-  REGISTER,
+  REGISTER
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { settingsSlice } from './reducers';
@@ -15,7 +15,7 @@ import { pokeApi } from './services';
 
 const persistConfig = {
   key: 'root',
-  storage,
+  storage
 };
 
 const rootReducer = combineReducers({ settings: settingsSlice.reducer });
@@ -26,16 +26,21 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 export const store = configureStore({
   reducer: {
     appConfig: persistedReducer,
-    [pokeApi.reducerPath]: pokeApi.reducer,
+    [pokeApi.reducerPath]: pokeApi.reducer
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [
-          FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER,
-        ],
-      },
-    }).concat([pokeApi.middleware]),
+          FLUSH,
+          REHYDRATE,
+          PAUSE,
+          PERSIST,
+          PURGE,
+          REGISTER
+        ]
+      }
+    }).concat([pokeApi.middleware])
 });
 
 export const persistor = persistStore(store);

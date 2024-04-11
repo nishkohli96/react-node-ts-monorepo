@@ -8,7 +8,7 @@ interface SettingsConfig {
 
 export enum ThemeMode {
   LIGHT = 'light',
-  DARK = 'dark',
+  DARK = 'dark'
 }
 
 const initialState: SettingsConfig = {
@@ -17,7 +17,7 @@ const initialState: SettingsConfig = {
     window.matchMedia
     && window.matchMedia('(prefers-color-scheme: dark)').matches
       ? ThemeMode.DARK
-      : ThemeMode.LIGHT,
+      : ThemeMode.LIGHT
 };
 
 export const settingsSlice = createSlice({
@@ -27,8 +27,8 @@ export const settingsSlice = createSlice({
     toggleTheme: state => {
       state.mode
         = state.mode === ThemeMode.LIGHT ? ThemeMode.DARK : ThemeMode.LIGHT;
-    },
-  },
+    }
+  }
 });
 
 /* Actions */
