@@ -8,7 +8,9 @@ const HomePage = () => {
 
   return (
     <div className="root">
-      <div style={{ margin: '10px 0px' }}>Hello from the HomePage.</div>
+      <div style={{ margin: '10px 0px' }}>
+        Hello from the HomePage.
+      </div>
       {isLoading ? (
         <Loading />
       ) : (
