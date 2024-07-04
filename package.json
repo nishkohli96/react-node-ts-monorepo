@@ -16,9 +16,9 @@
     "prettier": "prettier \"{apps,packages}/**/*.{json,html,css,sass,scss}\" --write --ignore-unknown"
   },
   "devDependencies": {
-    "husky": "^9.0.10",
-    "lint-staged": "^15.2.2",
-    "prettier": "^3.2.5",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.7",
+    "prettier": "^3.3.2",
     "turbo": "^1.12.3"
   },
   "lint-staged": {
