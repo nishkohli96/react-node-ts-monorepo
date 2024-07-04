@@ -1,7 +1,6 @@
 {
   "name": "nestjs-server",
   "version": "1.0.0",
-  "description": "",
   "author": "Nishant Kohli",
   "private": true,
   "license": "UNLICENSED",

@@ -1,6 +1,7 @@
 {
   "name": "next-client",
   "version": "1.0.0",
+  "author": "Nishant Kohli",
   "private": true,
   "scripts": {
     "dev": "next dev",

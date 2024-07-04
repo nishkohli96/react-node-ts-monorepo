@@ -1,7 +1,7 @@
 {
   "name": "react-client",
+  "version": "1.0.0",
   "author": "Nishant Kohli",
-  "version": "1.0.1",
   "private": true,
   "scripts": {
     "dev": "react-scripts start",
