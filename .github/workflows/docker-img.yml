@@ -1,9 +1,9 @@
-name: ci
+name: publish-docker-images
 
 on:
   push:
     branches:
-      - 'lib-upgrade-07-2024'
+      - 'main'
 
 jobs:
   docker:

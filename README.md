@@ -11,7 +11,7 @@
 - [Mui](https://mui.com/) and [Redux](https://redux.js.org/) preconfigured.
 - [Dockerize](https://docs.docker.com/) images
 - Easy to customise
-- Github Actions to test apps & docker images build
+- Github Actions to build apps and publish their docker images
 
 ## Get Started
 
