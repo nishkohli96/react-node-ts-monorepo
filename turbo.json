@@ -14,7 +14,7 @@
     "build": {
       "dependsOn": ["^build"]
     },
-    "start:prod": {
+    "prod": {
       "dependsOn": []
     },
     "test": {

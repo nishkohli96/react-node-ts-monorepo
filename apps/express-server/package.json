@@ -7,7 +7,7 @@
     "dev": "nodemon src/index.ts",
     "build": "rimraf dist && tsc",
     "start": "ts-node dist/index.js",
-    "start:prod": "yarn build && yarn start",
+    "prod": "yarn build && yarn start",
     "lint": "eslint --fix ."
   },
   "dependencies": {

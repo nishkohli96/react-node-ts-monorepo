@@ -4,9 +4,10 @@
   "author": "Nishant Kohli",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3003",
+    "dev": "next dev -p 3001",
     "build": "next build",
-    "start:prod": "yarn run build && next start",
+    "start": "next start",
+    "prod": "yarn run build && yarn run start",
     "lint": "next lint --fix ."
   },
   "dependencies": {
