@@ -5,13 +5,13 @@
 ## Features
 
 - [Turborepo](https://turborepo.org/)
-- [React](https://reactjs.org/) v18, [NestJs](https://nestjs.com/) v14.1, [ExpressJS](https://expressjs.com/), [NestJS](https://nestjs.com/) v10.3
+- [React](https://reactjs.org/), [NestJs](https://nestjs.com/), [ExpressJS](https://expressjs.com/), [NestJS](https://nestjs.com/)
 - 100% [Typescript](https://www.typescriptlang.org/)
 - [Prettier](https://prettier.io/) and Eslint setup alongside `pre-commit` hook.
 - [Mui](https://mui.com/) and [Redux](https://redux.js.org/) preconfigured.
 - [Dockerize](https://docs.docker.com/) images
 - Easy to customise
-- Github Actions to test apps & docker images build
+- Github Actions to build apps and publish their docker images
 
 ## Get Started
 

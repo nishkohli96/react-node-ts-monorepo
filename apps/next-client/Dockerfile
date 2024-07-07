@@ -31,4 +31,4 @@ RUN yarn workspace next-client build
 # Expose the port Next.js app runs on (default is 3000)
 EXPOSE 3000
 
-CMD [ "yarn", "workspace", "next-client", "start:prod" ]
+CMD [ "yarn", "workspace", "next-client", "start" ]

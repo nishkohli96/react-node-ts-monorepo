@@ -1,31 +1,33 @@
 {
   "name": "next-client",
   "version": "1.0.0",
+  "author": "Nishant Kohli",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3001",
     "build": "next build",
-    "start:prod": "yarn run build && next start",
+    "start": "next start",
+    "prod": "yarn run build && yarn run start",
     "lint": "next lint --fix ."
   },
   "dependencies": {
     "@emotion/cache": "^11.11.0",
-    "@emotion/react": "^11.11.3",
-    "@emotion/styled": "^11.11.0",
-    "@mui/icons-material": "^5.15.10",
-    "@mui/material": "^5.15.10",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/icons-material": "^5.15.21",
+    "@mui/material": "^5.15.21",
     "@mui/material-nextjs": "^5.15.11",
-    "next": "14.1.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "next": "14.2.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@nish1896/eslint-config": "^2.0.2",
-    "@types/node": "^20.11.17",
-    "@types/react": "^18.2.55",
-    "@types/react-dom": "^18.2.19",
-    "eslint": "^8.56.0",
-    "eslint-config-next": "14.1.0",
+    "@nish1896/eslint-config": "^2.0.4",
+    "@types/node": "^20.14.9",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "14.2.4",
     "typescript": "^5.3.3"
   }
 }

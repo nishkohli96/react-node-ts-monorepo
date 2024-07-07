@@ -6,8 +6,14 @@ Express JS Application with Typescript
 
 ```bash
 # development
-$ yarn run dev
+$ yarn dev
 
-# production mode
-$ yarn run start:prod
+# build & run production code
+$ yarn prod
 ```
+
+### Features
+
+- Express app configured
+- Preconfigured logger - [winston](https://www.npmjs.com/package/winston) for logging request and errors 
+- Producion Dockerfile

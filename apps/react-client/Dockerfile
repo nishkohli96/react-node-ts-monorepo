@@ -1,5 +1,5 @@
 # Base Image
-FROM node:20-alpine3.18 as phase1
+FROM node:20-alpine3.18 AS phase1
 
 WORKDIR /app
 
@@ -18,14 +18,14 @@ COPY --chown=node:node package.json .
 COPY --chown=node:node ./packages/core-lib/package.json packages/core-lib
 COPY --chown=node:node ./packages/core-lib packages/core-lib
 
-COPY --chown=node:node ./apps/frontend/package.json apps/frontend
-COPY --chown=node:node ./apps/frontend apps/frontend
+COPY --chown=node:node ./apps/react-client/package.json apps/react-client
+COPY --chown=node:node ./apps/react-client apps/frontend
 
 # install node_modules
 RUN npm install
 RUN yarn lib:build
 
-# build frontend
+# build react-client
 RUN yarn build
 
 # Phase 2 - Get the Build and host on nginx

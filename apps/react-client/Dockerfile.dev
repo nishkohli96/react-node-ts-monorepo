@@ -10,17 +10,17 @@ COPY tsconfig.json .
 
 # first create these directories, else the copying won't work.
 RUN mkdir -p packages/core-lib
-RUN mkdir -p apps/frontend
+RUN mkdir -p apps/react-client
 
 # copying only the required packages
 COPY ./packages/core-lib/package.json packages/core-lib
 COPY ./packages/core-lib packages/core-lib
 
-COPY ./apps/frontend/package.json apps/frontend
-COPY ./apps/frontend apps/frontend
+COPY ./apps/react-client/package.json apps/react-client
+COPY ./apps/react-client apps/react-client
 
 # install node_modules
 RUN npm install
 RUN yarn lib:build
 
-CMD [ "yarn", "workspace", "frontend", "dev" ]
+CMD [ "yarn", "workspace", "react-client", "dev" ]

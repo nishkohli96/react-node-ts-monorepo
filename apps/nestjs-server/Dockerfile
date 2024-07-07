@@ -21,4 +21,4 @@ COPY --chown=node:node ./apps/nestjs-server apps/nestjs-server
 RUN yarn
 
 # run server in prod env
-CMD ["yarn", "workspace", "nestjs-server", "start:prod"]
+CMD ["yarn", "workspace", "nestjs-server", "prod"]
