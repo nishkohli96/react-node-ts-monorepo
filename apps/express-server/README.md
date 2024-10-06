@@ -4,16 +4,20 @@ Express JS Application with Typescript
 
 ## Running the app
 
+In dev mode,
 ```bash
-# development
-$ yarn dev
+yarn dev
+```
 
-# build & run production code
-$ yarn prod
+Build the app and run production code
+```bash
+yarn prod
 ```
 
 ### Features
 
 - Express app configured
-- Preconfigured logger - [winston](https://www.npmjs.com/package/winston) for logging request and errors 
+- Handled loading of environment variables
+- Styled logging using [chalk](https://www.npmjs.com/package/chalk)
+- Preconfigured logger middleware - [winston](https://www.npmjs.com/package/winston) for logging request details and errors 
 - Producion Dockerfile
