@@ -1,19 +1,11 @@
-import { ReportHandler } from 'web-vitals';
-
-/**
- * getXXX() has been renamed to onXXX() in v3.
- *
- * Refer here https://www.npmjs.com/package/web-vitals
- */
-
-const reportWebVitals = (onPerfEntry?: ReportHandler) => {
+const reportWebVitals = (onPerfEntry?: () => void) => {
   if (onPerfEntry && onPerfEntry instanceof Function) {
-    import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
-      getCLS(onPerfEntry);
-      getFID(onPerfEntry);
-      getFCP(onPerfEntry);
-      getLCP(onPerfEntry);
-      getTTFB(onPerfEntry);
+    import('web-vitals').then(({ onLCP, onCLS, onINP, onFCP, onTTFB }) => {
+      onLCP(onPerfEntry);
+      onCLS(onPerfEntry);
+      onINP(onPerfEntry);
+      onFCP(onPerfEntry);
+      onTTFB(onPerfEntry);
     });
   }
 };
