@@ -2,6 +2,8 @@
 
 **The ideal repository for full-stack web development with ReactJS, NextJS as the frontend and ExpressJS, NestJS-fastify server as the backend**
 
+You can clone the full repo and keep only the packages you need in your monorepo, or just retain the source code of a single app, say [express-server](./apps/express-server/) to get started. I'll try my level best to keep all the dependencies in these repos upto date, while also adhering to the industry best practices.  
+
 ## Features
 
 - [Turborepo](https://turborepo.org/)
