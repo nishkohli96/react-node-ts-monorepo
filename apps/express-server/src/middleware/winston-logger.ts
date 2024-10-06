@@ -1,5 +1,5 @@
 import { createLogger, addColors, format, transports } from 'winston';
-import { ENV_VARS } from 'app-constants';
+import { ENV_VARS } from '@/app-constants';
 
 const { combine, timestamp, printf } = format;
 

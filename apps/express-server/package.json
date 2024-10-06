@@ -4,9 +4,9 @@
   "author": "Nishant Kohli",
   "private": true,
   "scripts": {
-    "dev": "nodemon src/index.ts",
-    "build": "rimraf dist && tsc",
-    "start": "ts-node dist/index.js",
+    "dev": "nodemon --exec 'ts-node -r tsconfig-paths/register src/index.ts'",
+    "build": "rimraf dist && tsc && tsc-alias",
+    "start": "node dist/index.js",
     "prod": "yarn build && yarn start",
     "lint": "eslint --fix ."
   },
@@ -23,7 +23,7 @@
     "eslint": "^8.57.0",
     "nodemon": "^3.1.4",
     "rimraf": "^5.0.7",
-    "ts-node": "^10.9.2",
+    "tsc-alias": "^1.8.10",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.3.3"
   }
