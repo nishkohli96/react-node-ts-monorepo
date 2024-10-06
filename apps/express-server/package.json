@@ -17,6 +17,7 @@
     "winston": "3.15.0"
   },
   "devDependencies": {
+    "@nish1896/eslint-config": "^2.0.5",
     "@types/cors": "^2.8.17",
     "@types/node": "^22.7.4",
     "eslint": "^8.57.0",
