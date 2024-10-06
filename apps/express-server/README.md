@@ -20,4 +20,3 @@ yarn prod
 - Handled loading of environment variables
 - Styled logging using [chalk](https://www.npmjs.com/package/chalk)
 - Preconfigured logger middleware - [winston](https://www.npmjs.com/package/winston) for logging request details and errors 
-- Producion Dockerfile

@@ -9,10 +9,9 @@ You can clone the full repo and keep only the packages you need in your monorepo
 - [Turborepo](https://turborepo.org/)
 - [React](https://reactjs.org/), [NestJs](https://nestjs.com/), [ExpressJS](https://expressjs.com/), [NestJS](https://nestjs.com/)
 - 100% [Typescript](https://www.typescriptlang.org/)
-- [Prettier](https://prettier.io/) and Eslint setup alongside `pre-commit` hook.
-- [Mui](https://mui.com/) and [Redux](https://redux.js.org/) preconfigured.
+- [Prettier](https://prettier.io/) and [Eslint](https://eslint.org/) setup alongside `pre-commit` hook.
+- [Mui v6](https://mui.com/) alongside theme change preconfigured.
 - [Dockerize](https://docs.docker.com/) images
-- Easy to customise
 - Github Actions to build apps and publish their docker images
 
 ## Get Started

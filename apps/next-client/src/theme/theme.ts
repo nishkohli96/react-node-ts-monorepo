@@ -1,7 +1,7 @@
 'use client';
+
 import { Roboto } from 'next/font/google';
-import { PaletteMode } from '@mui/material';
-import { createTheme } from '@mui/material/styles';
+import { PaletteMode } from '@mui/material/styles';
 import { LightThemePalette, DarkThemePalette } from './palette';
 
 const roboto = Roboto({
@@ -15,14 +15,14 @@ const roboto = Roboto({
   display: 'swap'
 });
 
-const AppTheme = (mode: PaletteMode) => ({
+export const getTheme = (mode: PaletteMode) => ({
   palette: {
     mode,
     common: {
       black: '#000',
-      white: '#fff'
+      white: '#fff',
     },
-    ...(mode === 'light' ? LightThemePalette : DarkThemePalette)
+    ...(mode === 'light' ? LightThemePalette : DarkThemePalette),
   },
   breakpoints: {
     values: {
@@ -30,12 +30,10 @@ const AppTheme = (mode: PaletteMode) => ({
       sm: 350,
       md: 768,
       lg: 1024,
-      xl: 1400
-    }
+      xl: 1400,
+    },
   },
-  typography: { fontFamily: roboto.style.fontFamily }
+  typography: {
+    fontFamily: roboto.style.fontFamily,
+  },
 });
-
-const theme = createTheme(AppTheme('dark'));
-
-export default theme;
