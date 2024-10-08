@@ -1,6 +1,8 @@
 /**
- *	Dark mode with MUI.
- *  https://mui.com/material-ui/customization/dark-mode/
+ * Check out these resources for building theme -
+ *
+ * https://zenoo.github.io/mui-theme-creator/
+ * https://m2.material.io/inline-tools/color/
  */
 
 export const LightThemePalette = {

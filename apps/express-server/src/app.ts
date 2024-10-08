@@ -1,8 +1,8 @@
 import express, { Express, Request, Response } from 'express';
 import cors from 'cors';
-import { ENV_VARS } from 'app-constants';
-import { requestLogger } from 'middleware';
-import * as Routes from 'routes';
+import { ENV_VARS } from '@/app-constants';
+import { requestLogger } from '@/middleware';
+import * as Routes from '@/routes';
 
 const app: Express = express();
 

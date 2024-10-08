@@ -7,5 +7,5 @@ const env = process.env;
 
 export const ENV_VARS = Object.freeze({
   env: env.NODE_ENV ?? 'development',
-  port: env.PORT ?? 5000
+  port: env.PORT ?? 8000
 });

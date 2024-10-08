@@ -1,21 +1,21 @@
 import Image from 'next/image';
-import Button from '@mui/material/Button';
-import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
+import ThemeChangeButton from '@/components/theme-change-button';
 import styles from './page.module.css';
 
-export default function Home() {
+const HomePage = () => {
   return (
     <main className={styles.main}>
-      <Paper sx={{ padding: '10px' }}>
-        <Button color="primary" variant="contained">
-          Mui Button
-        </Button>
-      </Paper>
       <div className={styles.description}>
         <p>
           Get started by editing&nbsp;
           <code className={styles.code}>src/app/page.tsx</code>
         </p>
+        <Typography sx={{ color: 'primary' }}>
+          Change Theme By clicking this button -&gt;
+          {' '}
+          <ThemeChangeButton />
+        </Typography>
         <div>
           <a
             href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
@@ -108,4 +108,6 @@ export default function Home() {
       </div>
     </main>
   );
-}
+};
+
+export default HomePage;

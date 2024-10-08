@@ -1,17 +1,22 @@
 {
-  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "baseUrl": "src",
-    "rootDir": "src",
-    "module": "commonjs",
-    "resolveJsonModule": false,
-    "outDir": "dist",
+    "baseUrl": "./",
+    "outDir": "dist", 
+    "rootDir": "src", 
+    "paths": {
+      "@/*": ["src/*"]
+    },
     "esModuleInterop": true,
-    "incremental": false
+    "moduleResolution": "node"
   },
-  "ts-node": {
-    "require": ["tsconfig-paths/register"]
-  },
-  "include": ["src"],
-  "exclude": ["node_modules", "**/__tests__/*", "dist"]
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "dist"],
+	"tsc-alias": {
+    "verbose": false,
+    "resolveFullPaths": true,
+    "fileExtensions": {
+      "inputGlob": "{js,mjs,ts}",
+      "outputCheck": ["js", "ts", "json", "jsx", "mjs"]
+    }
+	}
 }
