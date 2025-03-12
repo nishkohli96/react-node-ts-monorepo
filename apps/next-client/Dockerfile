@@ -11,11 +11,11 @@ WORKDIR /app
 RUN mkdir -p apps/next-client
 
 COPY --chown=node:node package.json .
-COPY --chown=node:node yarn.lock .
+COPY --chown=node:node pnpm-lock.yaml .
 COPY --chown=node:node ./apps/next-client/package.json  ./apps/next-client
 
 # Install dependencies
-RUN yarn --frozen-lockfile
+RUN pnpm --frozen-lockfile
 
 # Copy the rest of the application code to the container
 COPY ./apps/next-client ./apps/next-client
@@ -26,9 +26,9 @@ COPY ./apps/next-client ./apps/next-client
 # ENV NEXT_TELEMETRY_DISABLED 1
 
 # Build the Next.js app
-RUN yarn workspace next-client build
+RUN pnpm workspace next-client build
 
 # Expose the port Next.js app runs on (default is 3000)
 EXPOSE 3000
 
-CMD [ "yarn", "workspace", "next-client", "start" ]
+CMD [ "pnpm", "workspace", "next-client", "start" ]

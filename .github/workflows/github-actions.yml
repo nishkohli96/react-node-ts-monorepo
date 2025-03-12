@@ -19,22 +19,22 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'yarn'
+          cache: 'pnpm'
 
       - name: Install dependencies
-        run: yarn
+        run: pnpm
       
       - name: Build @core/lib
-        run: yarn lib:build
+        run: pnpm lib:build
 
       - name: Build express-server
-        run: yarn workspace express-server build
+        run: pnpm workspace express-server build
 
       - name: Build nestjs-server
-        run: yarn workspace nestjs-server build
+        run: pnpm workspace nestjs-server build
 
       - name: Build react-client
-        run: yarn workspace react-client build
+        run: pnpm workspace react-client build
 
       - name: Build next-client
-        run: yarn workspace next-client build
+        run: pnpm workspace next-client build

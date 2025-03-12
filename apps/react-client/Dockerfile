@@ -7,7 +7,7 @@ WORKDIR /app
 RUN mkdir -p packages/core-lib
 RUN mkdir -p apps/frontend
 
-# Run yarn only if package.json changes
+# Run pnpm only if package.json changes
 # copied tsconfig as core-lib's tsconfig extends rootDir's tsconfig
 COPY --chown=node:node turbo.json .
 COPY --chown=node:node tsconfig.json .
@@ -23,10 +23,10 @@ COPY --chown=node:node ./apps/react-client apps/frontend
 
 # install node_modules
 RUN npm install
-RUN yarn lib:build
+RUN pnpm lib:build
 
 # build react-client
-RUN yarn build
+RUN pnpm build
 
 # Phase 2 - Get the Build and host on nginx
 FROM nginx:1.25.4-alpine

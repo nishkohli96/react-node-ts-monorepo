@@ -14,7 +14,6 @@ test/jest-e2e.json
 tsconfig.json
 tsconfig.build.json
 turbo.json
-yarn.lock
 
 .eslintrc
 .eslintrc.*

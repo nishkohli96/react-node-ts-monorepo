@@ -3,7 +3,7 @@ FROM node:20-alpine3.18 as phase1
 
 WORKDIR /app
 
-# Run yarn only if package.json changes
+# Run pnpm only if package.json changes
 # copied tsconfig as core-lib's tsconfig extends rootDir's tsconfig
 COPY package.json .
 COPY tsconfig.json .
@@ -21,6 +21,6 @@ COPY ./apps/react-client apps/react-client
 
 # install node_modules
 RUN npm install
-RUN yarn lib:build
+RUN pnpm lib:build
 
-CMD [ "yarn", "workspace", "react-client", "dev" ]
+CMD [ "pnpm", "workspace", "react-client", "dev" ]

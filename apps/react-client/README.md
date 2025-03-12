@@ -17,13 +17,13 @@
 Build the local npm package `@core/lib` first.
 
 ```
-yarn workspace @core/lib lib:build
+pnpm workspace @core/lib lib:build
 ```
 
 ```bash
 # development
-$ yarn run dev
+$ pnpm run dev
 
 # production mode
-$ yarn run start:prod
+$ pnpm run start:prod
 ```
