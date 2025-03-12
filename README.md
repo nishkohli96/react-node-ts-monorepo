@@ -16,13 +16,19 @@ You can clone the full repo and keep only the packages you need in your monorepo
 
 ## Get Started
 
+This package uses [pnpm](https://pnpm.io/) as the workspace `packageManager`.
+
+```
+npm install -g pnpm
+```
+
 Place the shared packages in the `packages` folder & the applications code in the `apps` folder.
 If you do not wish to use Turborepo, delete `turbo.json` and remove it from `devDependencies` of the package.json in the root directory.
 
 Install `node_modules`
 
 ```
-yarn
+pnpm install
 ```
 
 Add relavant scripts in the root package.json for the frontend and backend apps of your choice.

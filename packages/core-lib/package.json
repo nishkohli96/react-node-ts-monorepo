@@ -13,7 +13,7 @@
     "@mui/material": "^6.4.7"
   },
   "devDependencies": {
-    "@nish1896/eslint-config": "^2.0.4",
+    "@nish1896/eslint-flat-config": "^1.1.3",
     "eslint": "^9.22.0",
     "typescript": "^5.8.2"
   }
