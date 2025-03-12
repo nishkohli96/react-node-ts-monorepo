@@ -7,13 +7,21 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const compat = new FlatCompat({
-  baseDirectory: __dirname
+  baseDirectory: __dirname,
 });
 
 const eslintConfig = [
   ...nextConfig,
-  ...compat.extends('next/core-web-vitals', 'next/typescript')
+  ...compat.extends('next/core-web-vitals', 'next/typescript'),
+  {
+    /**
+     * Somehow loading this rule is causing issues, when using
+     * NextApp in monorepo, thus disabling this for now.
+     */
+    rules: {
+      '@typescript-eslint/no-empty-function': 'off'
+    }
+  }
 ];
 
 export default eslintConfig;
-

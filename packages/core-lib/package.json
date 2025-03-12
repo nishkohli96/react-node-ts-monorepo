@@ -9,12 +9,12 @@
     "lint": "eslint --fix ."
   },
   "dependencies": {
-    "@mui/icons-material": "^5.15.10",
-    "@mui/material": "^5.15.10",
-    "typescript": "^5.3.3"
+    "@mui/icons-material": "^6.4.7",
+    "@mui/material": "^6.4.7"
   },
   "devDependencies": {
     "@nish1896/eslint-config": "^2.0.4",
-    "eslint": "^8.56.0"
+    "eslint": "^9.22.0",
+    "typescript": "^5.8.2"
   }
 }
