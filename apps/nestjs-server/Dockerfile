@@ -1,5 +1,5 @@
 # Base Image
-FROM node:20-alpine3.18 as phase1
+FROM node:22.14.0-alpine3.20 as phase1
 
 WORKDIR /app
 
