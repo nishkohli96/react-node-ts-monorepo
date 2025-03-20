@@ -3,6 +3,10 @@
   "author": "Nishant Kohli",
   "version": "1.0.1",
   "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
     "prepare": "husky",
     "lib:build": "pnpm workspace @core/lib lib:build",
@@ -25,5 +29,6 @@
       "prettier --write --ignore-unknown"
     ]
   },
-  "packageManager": "pnpm@10.6.2"
+  "packageManager": "yarn@1.2.22",
+  "license": "ISC"
 }
