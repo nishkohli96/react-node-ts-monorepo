@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "prepare": "husky",
-    "lib:build": "pnpm workspace @core/lib lib:build",
+    "lib:build": "yarn workspace @core/lib lib:build",
     "dev": "turbo run dev --parallel --no-cache",
     "build": "turbo run build",
     "lint": "turbo run lint",

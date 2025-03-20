@@ -6,12 +6,12 @@ Express JS Application with Typescript
 
 In dev mode,
 ```bash
-pnpm dev
+yarn dev
 ```
 
 Build the app and run production code
 ```bash
-pnpm prod
+yarn prod
 ```
 
 ### Features

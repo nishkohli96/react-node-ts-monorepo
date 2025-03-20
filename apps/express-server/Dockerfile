@@ -3,7 +3,7 @@ FROM node:20-alpine3.18 AS phase1
 
 WORKDIR /app
 
-# Run pnpm only if package.json changes
+# Run yarn only if package.json changes
 # copied tsconfig as express-server's tsconfig extends rootDir's tsconfig
 COPY --chown=node:node turbo.json .
 COPY --chown=node:node tsconfig.json .
@@ -17,10 +17,10 @@ COPY --chown=node:node ./apps/express-server/package.json apps/express-server
 COPY --chown=node:node ./apps/express-server apps/express-server
 
 # install node_modules
-RUN pnpm
+RUN yarn
 
 # build express-server
-RUN pnpm build
+RUN yarn build
 
 # run server in dev env
-CMD ["pnpm", "workspace", "express-server", "start"]
+CMD ["yarn", "workspace", "express-server", "start"]

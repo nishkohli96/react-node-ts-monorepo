@@ -11,21 +11,21 @@
 
 ```bash
 # development
-$ pnpm run dev
+$ yarn run dev
 
 # build & run in production mode
-$ pnpm run prod
+$ yarn run prod
 ```
 
 ## Test
 
 ```bash
 # unit tests
-$ pnpm run test
+$ yarn run test
 
 # e2e tests
-$ pnpm run test:e2e
+$ yarn run test:e2e
 
 # test coverage
-$ pnpm run test:cov
+$ yarn run test:cov
 ```
