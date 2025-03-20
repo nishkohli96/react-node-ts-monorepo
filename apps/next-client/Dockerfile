@@ -1,4 +1,4 @@
-FROM node:20-alpine3.18 AS base
+FROM node:22.14.0-alpine3.20 AS base
 
 # Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine 
 # to understand why libc6-compat might be needed.
@@ -11,7 +11,7 @@ WORKDIR /app
 RUN mkdir -p apps/next-client
 
 COPY --chown=node:node package.json .
-COPY --chown=node:node yarn.lock .
+COPY --chown=node:node yarn-lock.yaml .
 COPY --chown=node:node ./apps/next-client/package.json  ./apps/next-client
 
 # Install dependencies

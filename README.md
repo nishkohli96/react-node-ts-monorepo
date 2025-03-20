@@ -16,16 +16,27 @@ You can clone the full repo and keep only the packages you need in your monorepo
 
 ## Get Started
 
+This package uses [yarn](https://yarnpkg.com/) as the workspace `packageManager`.
+
+```
+npm install -g yarn
+```
+
 Place the shared packages in the `packages` folder & the applications code in the `apps` folder.
 If you do not wish to use Turborepo, delete `turbo.json` and remove it from `devDependencies` of the package.json in the root directory.
 
 Install `node_modules`
 
 ```
-yarn
+yarn install
 ```
 
 Add relavant scripts in the root package.json for the frontend and backend apps of your choice.
+
+Run specific commands,
+```
+yarn <workspace> run <command>
+```
 
 Build, run, lint or test all your apps in one command thanks to [Turborepo's Pipelines](https://turborepo.org/docs/core-concepts/pipelines)
 

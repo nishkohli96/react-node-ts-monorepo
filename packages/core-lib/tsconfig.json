@@ -1,9 +1,16 @@
 {
-  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "baseUrl": "src",
+    "target": "ES2024",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "baseUrl": "./",
     "rootDir": "src",
-    "outDir": "dist",
+    "outDir": "dist", 
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "esModuleInterop": true,
+    "jsx": "react-jsx",
     "resolveJsonModule": false,
     "incremental": false
   },

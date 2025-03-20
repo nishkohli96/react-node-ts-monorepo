@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Typography from '@mui/material/Typography';
-import ThemeChangeButton from '@/components/theme-change-button';
 import styles from './page.module.css';
 
 const HomePage = () => {
@@ -14,7 +13,6 @@ const HomePage = () => {
         <Typography sx={{ color: 'primary' }}>
           Change Theme By clicking this button -&gt;
           {' '}
-          <ThemeChangeButton />
         </Typography>
         <div>
           <a

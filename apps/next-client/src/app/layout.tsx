@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
+import { AppBar } from '@/components';
 import { AppThemeProvider } from '@/theme';
 import { LayoutProps } from '@/types';
 import './globals.css';
@@ -27,6 +28,7 @@ const RootLayout = ({ children }: LayoutProps) => {
       <body className={roboto.variable}>
         <AppRouterCacheProvider options={{ key: 'mui' }}>
           <AppThemeProvider>
+            <AppBar />
             {children}
           </AppThemeProvider>
         </AppRouterCacheProvider>

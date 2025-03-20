@@ -16,10 +16,10 @@
     "prettier": "prettier \"{apps,packages}/**/*.{json,html,css,sass,scss}\" --write --ignore-unknown"
   },
   "devDependencies": {
-    "husky": "^9.0.11",
-    "lint-staged": "^15.2.7",
-    "prettier": "^3.3.2",
-    "turbo": "^2.0.6"
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.0",
+    "prettier": "^3.5.3",
+    "turbo": "^2.4.4"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
@@ -29,5 +29,6 @@
       "prettier --write --ignore-unknown"
     ]
   },
-  "packageManager": "yarn@1.22.19"
+  "packageManager": "yarn@1.2.22",
+  "license": "ISC"
 }
