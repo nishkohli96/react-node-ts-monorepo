@@ -14,8 +14,8 @@
     "react": "^19.0.0"
   },
   "devDependencies": {
-    "@nish1896/eslint-flat-config": "^1.1.4",
-    "eslint": "^9.22.0",
+    "@nish1896/eslint-flat-config": "^2.0.0",
+    "eslint": "^9.23.0",
     "tsc-alias": "^1.8.11",
     "typescript": "^5.8.2"
   }

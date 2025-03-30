@@ -23,11 +23,11 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.0",
-    "@nish1896/eslint-flat-config": "^1.1.4",
-    "@types/node": "^22.13.10",
+    "@nish1896/eslint-flat-config": "^2.0.0",
+    "@types/node": "^22.13.14",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
-    "eslint": "^9.22.0",
+    "eslint": "^9.23.0",
     "eslint-config-next": "15.2.2",
     "typescript": "^5.8.2"
   }
