@@ -1,4 +1,4 @@
-import { PaletteMode } from '@mui/material';
+import type { PaletteMode } from '@mui/material';
 import { LightThemePalette, DarkThemePalette } from './palette';
 
 const AppTheme = (mode: PaletteMode) => ({

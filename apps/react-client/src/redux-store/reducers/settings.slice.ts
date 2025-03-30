@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { RootState } from 'redux-store';
-import { PaletteMode } from '@mui/material';
+import type { PaletteMode } from '@mui/material';
 
 interface SettingsConfig {
   mode: PaletteMode;
