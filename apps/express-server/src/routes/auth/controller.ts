@@ -1,6 +1,6 @@
-import { Router, Request, Response } from 'express';
+import { Router, type Request, type Response } from 'express';
 import authService from './service';
-import * as AuthTypes from './types';
+import type * as AuthTypes from './types';
 
 const authRouter = Router();
 

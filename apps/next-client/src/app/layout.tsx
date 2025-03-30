@@ -3,7 +3,7 @@ import { Roboto } from 'next/font/google';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import { AppBar } from '@/components';
 import { AppThemeProvider } from '@/theme';
-import { LayoutProps } from '@/types';
+import type { LayoutProps } from '@/types';
 import './globals.css';
 
 const roboto = Roboto({

@@ -1,4 +1,4 @@
-import { Response } from 'express';
+import type { Response } from 'express';
 
 class AuthService {
   loginUser(res: Response, email: string, password: string) {

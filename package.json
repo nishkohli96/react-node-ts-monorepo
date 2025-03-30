@@ -1,7 +1,7 @@
 {
   "name": "@nish1896/react-nestjs-monorepo",
   "author": "Nishant Kohli",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "private": true,
   "workspaces": [
     "apps/*",
@@ -22,9 +22,6 @@
     "turbo": "^2.4.4"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --fix"
-    ],
     "*.{json,html,css,sass,scss}": [
       "prettier --write --ignore-unknown"
     ]
