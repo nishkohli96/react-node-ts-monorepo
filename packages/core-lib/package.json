@@ -9,14 +9,14 @@
     "lint": "eslint --fix ."
   },
   "dependencies": {
-    "@mui/icons-material": "^6.4.7",
-    "@mui/material": "^6.4.7",
-    "react": "^19.0.0"
+    "@mui/icons-material": "^7.0.1",
+    "@mui/material": "^7.0.1",
+    "react": "^19.1.0"
   },
   "devDependencies": {
     "@nish1896/eslint-flat-config": "^2.0.0",
     "eslint": "^9.23.0",
-    "tsc-alias": "^1.8.11",
+    "tsc-alias": "^1.8.13",
     "typescript": "^5.8.2"
   }
 }
