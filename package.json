@@ -22,9 +22,6 @@
     "turbo": "^2.4.4"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --fix"
-    ],
     "*.{json,html,css,sass,scss}": [
       "prettier --write --ignore-unknown"
     ]
