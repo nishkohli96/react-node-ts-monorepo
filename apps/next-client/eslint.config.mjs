@@ -1,6 +1,8 @@
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { FlatCompat } from '@eslint/eslintrc';
+import jsConfig from '@nish1896/eslint-flat-config/js';
+import nextTsConfig from '@nish1896/eslint-flat-config/next-ts';
 import nextConfig from '@nish1896/eslint-flat-config/next';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -11,8 +13,10 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
-  ...nextConfig,
   ...compat.extends('next/core-web-vitals', 'next/typescript'),
+  ...jsConfig,
+  ...nextTsConfig,
+  ...nextConfig,
   {
     /**
      * Somehow loading this rule is causing issues, when using
