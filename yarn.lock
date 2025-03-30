@@ -2721,10 +2721,10 @@
   dependencies:
     eslint-scope "5.1.1"
 
-"@nish1896/eslint-flat-config@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@nish1896/eslint-flat-config/-/eslint-flat-config-2.0.0.tgz#d55c1bbd5d6d4f76894f41c09a0d7f905f2d0a80"
-  integrity sha512-0yTLUnO/xtkDM5rnKkdxT9gj+EMegB0x0y8ccpzcoWHJ4FNYo46tjZfXBbUL60oaxqAhgJBypExJSSh0NRwykQ==
+"@nish1896/eslint-flat-config@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@nish1896/eslint-flat-config/-/eslint-flat-config-2.0.1.tgz#f6354e71debef37ea4fb1d1138e6b20d7e2ae284"
+  integrity sha512-DwWNcjOuI34v4zPgHkf13tUOoC0HY/xz6md+bdqV3JyUJzG+NJD9fb4+4McPJsC969d4rCl92LQ/mdqiCKIb5g==
   dependencies:
     "@stylistic/eslint-plugin-js" "^4.2.0"
     "@stylistic/eslint-plugin-jsx" "^4.2.0"
