@@ -1,7 +1,7 @@
 'use client';
 
 import { Roboto } from 'next/font/google';
-import { PaletteMode } from '@mui/material/styles';
+import type { PaletteMode } from '@mui/material/styles';
 import { LightThemePalette, DarkThemePalette } from './palette';
 
 const roboto = Roboto({

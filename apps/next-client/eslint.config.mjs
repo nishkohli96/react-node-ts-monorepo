@@ -13,19 +13,10 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
-  ...compat.extends('next/core-web-vitals', 'next/typescript'),
   ...jsConfig,
-  ...nextTsConfig,
   ...nextConfig,
-  {
-    /**
-     * Somehow loading this rule is causing issues, when using
-     * NextApp in monorepo, thus disabling this for now.
-     */
-    rules: {
-      '@typescript-eslint/no-empty-function': 'off'
-    }
-  }
+  ...nextTsConfig,
+  ...compat.extends('next/core-web-vitals', 'next/typescript'),
 ];
 
 export default eslintConfig;
