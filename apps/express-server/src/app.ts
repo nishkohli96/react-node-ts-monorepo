@@ -1,4 +1,8 @@
-import express, { Express, Request, Response } from 'express';
+import express, {
+  type Express,
+  type Request,
+  type Response
+} from 'express';
 import cors from 'cors';
 import { ENV_VARS } from '@/app-constants';
 import { requestLogger } from '@/middleware';

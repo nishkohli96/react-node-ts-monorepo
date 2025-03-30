@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
+
 import { createLogger, addColors, format, transports } from 'winston';
 import { ENV_VARS } from '@/app-constants';
 
@@ -23,7 +25,7 @@ const customLevels = {
   }
 };
 
-const myFormat = printf(
+const logFormat = printf(
   ({ level, message, timestamp }) => `[ ${level} ]:: ${timestamp} - ${message}`
 );
 
@@ -47,7 +49,7 @@ const winstonLogger = createLogger({
 
     /* Aligns in a tabular format */
     // format.align(),
-    myFormat
+    logFormat
   ),
   //   defaultMeta: { service: 'log-service' },
   transports: [
