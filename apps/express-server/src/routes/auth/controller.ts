@@ -5,8 +5,7 @@ import type * as AuthTypes from './types';
 const authRouter = Router();
 
 authRouter.get('/test', function printHello(_, res: Response) {
-  return res.status(200).send('Hello World !!')
-    .end();
+  return res.status(200).send('Hello World !!').end();
 });
 
 /* Login user */

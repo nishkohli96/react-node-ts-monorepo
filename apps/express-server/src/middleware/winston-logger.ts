@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
 
 import { createLogger, addColors, format, transports } from 'winston';
-import { ENV_VARS } from '@/app-constants';
+import { ENV_CONFIG } from '@/constants';
 
 const { combine, timestamp, printf } = format;
 
@@ -72,7 +72,7 @@ addColors(customLevels.colors);
  * `${info.level}: ${info.message} JSON.stringify({ ...rest }) `
  */
 
-if (ENV_VARS.env !== 'production') {
+if (ENV_CONFIG.env !== 'production') {
   winstonLogger.add(
     new transports.Console({ format: format.colorize({ all: true }) })
   );

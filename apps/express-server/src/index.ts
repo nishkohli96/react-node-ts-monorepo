@@ -17,12 +17,12 @@
 import 'dotenv/config';
 import os from 'os';
 import { createServer } from 'node:http';
-import { ENV_VARS } from '@/app-constants';
+import { ENV_CONFIG } from '@/constants';
 import { winstonLogger } from '@/middleware';
 import app from './app';
 
 const hostName = os.hostname();
-const port = ENV_VARS.port;
+const { port, env } = ENV_CONFIG;
 
 function bootstrap() {
   /* DB Connection Logic */
@@ -39,7 +39,7 @@ function bootstrap() {
 
   server.listen(port, () => {
     winstonLogger.info(
-      `[ ⚡️ ${hostName} ⚡️ ] - Server running on port ${port}`
+      `[ ⚡️ ${hostName}@${env} ⚡️ ] - Server running on port ${port}`
     );
   });
 }
