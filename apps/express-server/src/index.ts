@@ -25,21 +25,19 @@ const hostName = os.hostname();
 const { port, env } = ENV_CONFIG;
 
 function bootstrap() {
-  /* DB Connection Logic */
-  // try {
-  //   await mongoose.connect(db_connection_string, { autoIndex: true });
-  //   console_log('Connected to DATABASE', `${db_name}@${db_url}`);
-  // } catch (err) {
-  //   console.log(chalk.red('⚠ Error connecting to the Database ⚠'));
-  //   console.log(err);
-  //   process.exit(1);
-  // }
+
+  /**
+   * You can write any custom logic here, like connecting to the
+   * database. Refer this snippet to connect to MongoDB, Postgres
+   * or MySQL database.
+   *
+   * https://github.com/nishkohli96/client-server-libs/blob/main/apps/express-server/src/index.ts#L171
+   */
 
   const server = createServer(app);
-
   server.listen(port, () => {
     winstonLogger.info(
-      `[ ⚡️ ${hostName}@${env} ⚡️ ] - Server running on port ${port}`
+      `[⚡️ ${hostName}@${env} ⚡️] - Server running on port ${port}`
     );
   });
 }

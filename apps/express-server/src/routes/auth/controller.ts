@@ -1,4 +1,4 @@
-import { Router, type Request, type Response } from 'express';
+import { Router, type Response } from 'express';
 import authService from './service';
 import type * as AuthTypes from './types';
 
@@ -12,7 +12,7 @@ authRouter.get('/test', function printHello(_, res: Response) {
 authRouter.post(
   '/login',
   function loginUser(
-    req: Request<object, object, AuthTypes.UserLoginBody>,
+    req: AuthTypes.UserLoginRequest,
     res: Response
   ) {
     const { email, password } = req.body;

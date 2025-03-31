@@ -7,6 +7,7 @@ import cors from 'cors';
 import { ENV_CONFIG } from '@/constants';
 import { requestLogger } from '@/middleware';
 import { routesList } from '@/routes';
+import { sendErrorResponse } from '@/utils';
 
 const app: Express = express();
 
@@ -23,14 +24,16 @@ app.get('/', (_: Request, response: Response) => {
   });
 });
 
-routesList.forEach(route => {
-  app.use(route.path, route.router);
-});
+routesList.forEach(route => app.use(route.path, route.router));
 
 /* 404 Handler - To be written at last */
 app.get('*', (req: Request, response: Response) => {
-  const notFoundMsg = `Not Found - "${req.originalUrl}"`;
-  response.status(404).send(notFoundMsg);
+  const notFoundError = `No route exists for this endpoint: "${req.originalUrl}"`;
+  return sendErrorResponse(response, {
+    statusCode: 404,
+    message: '404 - Not Found',
+    error: notFoundError
+  });
 });
 
 export default app;
