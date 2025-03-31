@@ -5,7 +5,7 @@
 
 const env = process.env;
 
-export const ENV_VARS = Object.freeze({
+export const ENV_CONFIG = Object.freeze({
   env: env.NODE_ENV ?? 'development',
   port: env.PORT ?? 8000
 });

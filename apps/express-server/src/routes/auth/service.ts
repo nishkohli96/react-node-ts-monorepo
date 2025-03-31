@@ -1,9 +1,10 @@
 import type { Response } from 'express';
+import { sendErrorResponse } from '@/utils';
 
 class AuthService {
   loginUser(res: Response, email: string, password: string) {
     try {
-      res
+      return res
         .status(200)
         .send({
           email,
@@ -11,10 +12,10 @@ class AuthService {
         })
         .end();
     } catch (error) {
-      res.status(500).send(`Internal Server Error: ${JSON.stringify(error)}`);
+      return sendErrorResponse(res, { error });
     }
-    res.end();
   }
 }
 
-export default new AuthService();
+const authService = new AuthService();
+export default authService;

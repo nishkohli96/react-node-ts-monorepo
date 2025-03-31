@@ -16,19 +16,3 @@ export function requestLogger(
   });
   next();
 }
-
-export function printSuccessMsg(msg: string): void {
-  winstonLogger.info(`✅ SUCCESS - ${msg}`);
-}
-
-export function printError(error: unknown): void {
-  winstonLogger.error(
-    `⚠ ERROR - ${error instanceof Error ? error.message : JSON.stringify(error)}`
-  );
-}
-
-export function errorLogger(res: Response, error: unknown) {
-  const err = JSON.stringify(error);
-  printError(error);
-  res.status(500).send(err);
-}

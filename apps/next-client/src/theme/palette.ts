@@ -3,6 +3,7 @@
  *
  * https://zenoo.github.io/mui-theme-creator/
  * https://m2.material.io/inline-tools/color/
+ * https://bareynol.github.io/mui-theme-creator/
  */
 
 export const LightThemePalette = {
