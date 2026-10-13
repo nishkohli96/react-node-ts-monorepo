@@ -8,24 +8,12 @@ This is a [Next.js](https://nextjs.org) **v16** project bootstrapped with [`crea
 - [Tailwind CSS](https://tailwindcss.com/) **v4**
 - Containerize the application using Docker
 
-**If you're also setting up a backend application for your project, you can clone my [node-express-ts-template](https://github.com/nishkohli96/node-express-ts-template) repository.**
-
 ## Getting Started
 
-```bash
-sh setup.sh
-```
-
-The above command executes the `setup.sh` script to set up the project by:
-
-- Ensuring [pnpm](https://pnpm.io/) and [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) are installed globally.
-- Installing all dependencies.
-- Building the app for the first time.
-
-You can now start the development server by running:
+Start the development server by running the below command:
 
 ```bash
-pnpm dev
+pnpm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) on your browser to see the result.
@@ -33,25 +21,6 @@ Open [http://localhost:3000](http://localhost:3000) on your browser to see the r
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Update Dependencies
-
-[npm-check-updates](https://www.npmjs.com/package/npm-check-updates) is an excellent tool for detecting the latest versions of dependencies and updating them in your `package.json`. It simplifies the process of keeping your project up to date with the latest package versions.
-
-The `setup.sh` script globally installs **npm-check-updates**.
-
-To update packages while also understanding the impact of the changes, run:
-
-```bash
-pnpm check-updates
-```
-This groups updates by type (**major**, **minor**, **patch**), making it easier to assess potential risks before upgrading.
-
-Update all dependencies && check build status after updating all packages:
-
-```bash
-pnpm install-updates && pnpm build
-```
 
 ## Learn More
 

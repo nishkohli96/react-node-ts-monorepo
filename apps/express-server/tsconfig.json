@@ -3,11 +3,10 @@
     "target": "ES2024",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "baseUrl": "./",
     "outDir": "dist", 
     "rootDir": "src", 
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["./src/*"]
     },
     "esModuleInterop": true
   },

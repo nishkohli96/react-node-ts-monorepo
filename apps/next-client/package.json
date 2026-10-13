@@ -1,20 +1,16 @@
 {
-  "name": "nextjs-template",
-  "version": "2.1.2",
+  "name": "next-client",
+  "version": "1.0.0",
   "author": "Nishant Kohli",
-  "description": "Next.js v16 template with Material-UI, Docker, and Tailwind CSS",
+  "description": "Next.js v16 app with Material-UI v9, Docker, and Tailwind CSS",
   "private": true,
   "scripts": {
-    "set-up": "sh setup.sh",
-    "dev": "next dev -p 3000 --webpack",
-    "build": "next build --webpack",
+    "dev": "next dev -p 3000",
+    "build": "next build",
     "start": "next start",
     "prod": "pnpm build && pnpm start",
     "lint": "eslint --fix",
-    "lint:check": "eslint",
-    "prepare": "husky || true",
-    "check-updates": "ncu --format group -u",
-    "install-updates": "pnpm check-updates && pnpm install"
+    "lint:check": "eslint"
   },
   "dependencies": {
     "@emotion/cache": "^11.14.0",
@@ -42,23 +38,5 @@
     "prettier": "^3.9.10",
     "tailwindcss": "^4.3.3",
     "typescript": "^6.0.3"
-  },
-  "lint-staged": {
-    "*.{json,html,css,sass,scss}": [
-      "prettier --write --ignore-unknown"
-    ],
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --fix"
-    ]
-  },
-  "packageManager": "pnpm@11.20.0",
-  "keywords": [
-    "react",
-    "nextjs",
-    "template",
-    "material-ui",
-    "tailwindcss",
-    "docker"
-  ],
-  "license": "MIT"
+  }
 }

@@ -47,5 +47,6 @@ USER node
 
 EXPOSE 3000
 
-# Call next directly (not via pnpm) so SIGTERM reaches the server process
-CMD ["node_modules/.bin/next", "start"]
+# Call next directly (not via pnpm) so SIGTERM reaches the server process.
+# nodeLinker=hoisted puts the binary in the workspace root, not in the app.
+CMD ["/app/node_modules/.bin/next", "start"]
