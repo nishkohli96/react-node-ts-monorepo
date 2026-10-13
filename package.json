@@ -12,9 +12,9 @@
   },
   "devDependencies": {
     "husky": "^9.1.7",
-    "lint-staged": "^15.5.0",
-    "prettier": "^3.5.3",
-    "turbo": "^2.4.4"
+    "lint-staged": "^17.6.0",
+    "prettier": "^3.9.10",
+    "turbo": "^2.11.8"
   },
   "lint-staged": {
     "*.{json,html,css,sass,scss}": [
