@@ -17,7 +17,7 @@ export default function AppBar() {
           <Box sx={{ flexGrow: 1 }}>
             <Link href="/" passHref>
               <Typography variant="h6" component="div">
-                NextJS App
+                Next.js App
               </Typography>
             </Link>
           </Box>

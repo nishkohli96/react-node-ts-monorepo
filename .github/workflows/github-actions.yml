@@ -8,22 +8,27 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [22.14.0]
+        node-version: [24.14.0]
         os: [ubuntu-latest]
 
     steps:
       - name: Git Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
+
+      - name: Configure pnpm
+        uses: pnpm/action-setup@v6
+        with:
+          run_install: false
 
       - name: Setup Node env
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'yarn'
+          cache: 'pnpm'
 
-      - name: Install dependencies
-        run: yarn
-      
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+
       - name: Build @core/lib
         run: yarn lib:build
 
@@ -32,9 +37,6 @@ jobs:
 
       - name: Build nestjs-server
         run: yarn workspace nestjs-server build
-
-      - name: Build react-client
-        run: yarn workspace react-client build
 
       - name: Build next-client
         run: yarn workspace next-client build

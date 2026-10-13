@@ -1,41 +1,46 @@
 # react-node-ts-monorepo
 
-**The ideal repository for full-stack web development with ReactJS, NextJS as the frontend and ExpressJS, NestJS-fastify server as the backend**
+**The ideal repository for full-stack web development with NextJS as the frontend and ExpressJS, NestJS-fastify server as the backend.**
 
 You can clone the full repo and keep only the packages you need in your monorepo, or just retain the source code of a single app, say [express-server](./apps/express-server/) to get started. I'll try my level best to keep all the dependencies in these repos upto date, while also adhering to the industry best practices.  
 
 ## Features
 
 - [Turborepo](https://turborepo.org/)
-- [React](https://reactjs.org/), [NestJs](https://nestjs.com/), [ExpressJS](https://expressjs.com/), [NestJS](https://nestjs.com/)
+- [Next.js](https://nextjs.org/), [ExpressJS](https://expressjs.com/), [NestJS](https://nestjs.com/)
 - 100% [Typescript](https://www.typescriptlang.org/)
 - [Prettier](https://prettier.io/) and [Eslint](https://eslint.org/) setup alongside `pre-commit` hook.
-- [Mui v7](https://mui.com/) alongside theme change preconfigured.
+- [Mui v9](https://mui.com/) alongside theme change preconfigured.
 - [Dockerize](https://docs.docker.com/) images
 - Github Actions to build apps and publish their docker images
 
 ## Get Started
 
-This package uses [yarn](https://yarnpkg.com/) as the workspace `packageManager`.
+This repo is a [pnpm](https://pnpm.io/) workspace (see `pnpm-workspace.yaml`) and expects the Node.js version in `.nvmrc`.
 
+```bash
+sh setup.sh
 ```
-npm install -g yarn
-```
+
+The above command executes the `setup.sh` script to set up the project by:
+
+- Ensuring [pnpm](https://pnpm.io/) and [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) are installed globally.
+- Installing all dependencies.
+- Building `@core/lib` and then all the apps for the first time.
 
 Place the shared packages in the `packages` folder & the applications code in the `apps` folder.
 If you do not wish to use Turborepo, delete `turbo.json` and remove it from `devDependencies` of the package.json in the root directory.
 
-Install `node_modules`
+Start all the apps in dev mode,
 
-```
-yarn install
+```bash
+pnpm dev
 ```
 
-Add relavant scripts in the root package.json for the frontend and backend apps of your choice.
+Run a command in a specific workspace,
 
-Run specific commands,
-```
-yarn <workspace> run <command>
+```bash
+pnpm --filter <workspace> <command>   # eg. pnpm --filter express-server dev
 ```
 
 Build, run, lint or test all your apps in one command thanks to [Turborepo's Pipelines](https://turborepo.org/docs/core-concepts/pipelines)

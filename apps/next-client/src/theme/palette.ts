@@ -3,7 +3,6 @@
  *
  * https://zenoo.github.io/mui-theme-creator/
  * https://m2.material.io/inline-tools/color/
- * https://bareynol.github.io/mui-theme-creator/
  */
 
 export const LightThemePalette = {
@@ -39,5 +38,12 @@ export const DarkThemePalette = {
   text: {
     primary: '#f8f7ff',
     secondary: '#f6e4df'
+  }
+};
+
+export const CommonColorPalette = {
+  common: {
+    black: '#000',
+    white: '#fff'
   }
 };

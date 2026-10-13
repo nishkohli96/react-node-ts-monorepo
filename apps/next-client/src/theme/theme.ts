@@ -1,8 +1,18 @@
+/**
+ * https://mui.com/material-ui/customization/css-theme-variables/configuration/
+ * https://mui.com/material-ui/customization/dark-mode/
+ */
+
 'use client';
 
+import { createTheme, type Theme } from '@mui/material/styles';
 import { Roboto } from 'next/font/google';
-import type { PaletteMode } from '@mui/material/styles';
-import { LightThemePalette, DarkThemePalette } from './palette';
+import {
+  LightThemePalette,
+  DarkThemePalette,
+  CommonColorPalette
+} from './palette';
+import { colorSchemeAttribute } from './constants';
 
 const roboto = Roboto({
   weight: [
@@ -12,17 +22,27 @@ const roboto = Roboto({
     '700'
   ],
   subsets: ['latin'],
-  display: 'swap'
+  display: 'swap',
+  variable: '--font-roboto'
 });
 
-export const getTheme = (mode: PaletteMode) => ({
-  palette: {
-    mode,
-    common: {
-      black: '#000',
-      white: '#fff',
+export const theme: Theme = createTheme({
+  cssVariables: {
+    colorSchemeSelector: colorSchemeAttribute,
+  },
+  colorSchemes: {
+    light: {
+      palette: {
+        ...CommonColorPalette,
+        ...LightThemePalette,
+      },
     },
-    ...(mode === 'light' ? LightThemePalette : DarkThemePalette),
+    dark: {
+      palette: {
+        ...CommonColorPalette,
+        ...DarkThemePalette,
+      },
+    },
   },
   breakpoints: {
     values: {

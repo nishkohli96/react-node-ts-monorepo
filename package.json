@@ -3,13 +3,9 @@
   "author": "Nishant Kohli",
   "version": "1.0.0",
   "private": true,
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
   "scripts": {
     "prepare": "husky",
-    "lib:build": "yarn workspace @core/lib lib:build",
+    "lib:build": "pnpm --filter @core/lib lib:build",
     "dev": "turbo run dev --parallel --no-cache",
     "build": "turbo run build",
     "lint": "turbo run lint",
@@ -26,6 +22,6 @@
       "prettier --write --ignore-unknown"
     ]
   },
-  "packageManager": "yarn@1.2.22",
+  "packageManager": "pnpm@11.20.0",
   "license": "ISC"
 }

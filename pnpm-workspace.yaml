@@ -1,0 +1,10 @@
+packages:
+  - apps/*
+  - packages/*
+nodeLinker: hoisted
+allowBuilds:
+  '@swc/core': true
+  unrs-resolver: true
+minimumReleaseAgeExclude:
+  - '@nish1896/mui-components@2.3.1'
+  - postcss@8.5.30
