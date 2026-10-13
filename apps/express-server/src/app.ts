@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import { ENV_CONFIG } from '@/constants';
+import { ENV_VARS } from '@/constants';
 import { errorHandler, requestLogger } from '@/middleware';
 import { routesList } from '@/routes';
 import { sendErrorResponse } from '@/utils';
@@ -15,7 +15,7 @@ app.use(requestLogger);
 
 app.get('/', (_, response) => {
   response.status(200).json({
-    env: ENV_CONFIG.env,
+    env: ENV_VARS.env,
     message: 'Api is up & running!!!'
   });
 });

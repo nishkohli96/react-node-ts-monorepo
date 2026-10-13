@@ -17,12 +17,12 @@
 import 'dotenv/config';
 import os from 'os';
 import { createServer } from 'node:http';
-import { ENV_CONFIG } from '@/constants';
+import { ENV_VARS } from '@/constants';
 import { winstonLogger } from '@/middleware';
 import app from './app';
 
 const hostName = os.hostname();
-const { port, env } = ENV_CONFIG;
+const { port, env } = ENV_VARS;
 
 /* Max time to let in-flight requests finish after SIGTERM / SIGINT */
 const SHUTDOWN_TIMEOUT_MS = 5000;

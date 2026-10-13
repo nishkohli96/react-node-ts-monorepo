@@ -11,6 +11,12 @@ ARG PNPM_VERSION=11.20.0
 RUN apk add --no-cache libc6-compat
 RUN npm i -g pnpm@${PNPM_VERSION}
 
+# pnpm-workspace.yaml sets nodeLinker=hoisted, which installs every app in the
+# lockfile even when only one package.json is copied. Use the isolated layout
+# here instead (as an env var, so `pnpm build` below sees the same layout as
+# the install).
+ENV pnpm_config_node_linker=isolated
+
 WORKDIR /app
 
 # Next.js collects completely anonymous telemetry data about general usage.
@@ -23,7 +29,7 @@ FROM base AS builder
 
 COPY package.json pnpm-workspace.yaml pnpm-lock.yaml ./
 COPY apps/next-client/package.json apps/next-client/
-RUN pnpm install --frozen-lockfile --filter ./apps/next-client...
+RUN pnpm install --frozen-lockfile
 
 COPY apps/next-client apps/next-client
 RUN pnpm --filter ./apps/next-client build
@@ -34,7 +40,7 @@ ENV NODE_ENV=production
 
 COPY package.json pnpm-workspace.yaml pnpm-lock.yaml ./
 COPY apps/next-client/package.json apps/next-client/
-RUN pnpm install --frozen-lockfile --prod --ignore-scripts --filter ./apps/next-client...
+RUN pnpm install --frozen-lockfile --prod --ignore-scripts
 
 WORKDIR /app/apps/next-client
 
@@ -47,6 +53,5 @@ USER node
 
 EXPOSE 3000
 
-# Call next directly (not via pnpm) so SIGTERM reaches the server process.
-# nodeLinker=hoisted puts the binary in the workspace root, not in the app.
-CMD ["/app/node_modules/.bin/next", "start"]
+# Call next directly (not via pnpm) so SIGTERM reaches the server process
+CMD ["node_modules/.bin/next", "start"]

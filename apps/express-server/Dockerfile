@@ -8,6 +8,12 @@ ARG PNPM_VERSION=11.20.0
 
 RUN npm i -g pnpm@${PNPM_VERSION}
 
+# pnpm-workspace.yaml sets nodeLinker=hoisted, which installs every app in the
+# lockfile even when only one package.json is copied. Use the isolated layout
+# here instead (as an env var, so `pnpm build` below sees the same layout as
+# the install).
+ENV pnpm_config_node_linker=isolated
+
 WORKDIR /app
 
 # Only the workspace manifests + express-server's package.json are needed to
@@ -16,7 +22,7 @@ FROM base AS builder
 
 COPY package.json pnpm-workspace.yaml pnpm-lock.yaml ./
 COPY apps/express-server/package.json apps/express-server/
-RUN pnpm install --frozen-lockfile --filter ./apps/express-server...
+RUN pnpm install --frozen-lockfile
 
 COPY apps/express-server apps/express-server
 RUN pnpm --filter ./apps/express-server build
@@ -27,7 +33,7 @@ ENV NODE_ENV=production
 
 COPY package.json pnpm-workspace.yaml pnpm-lock.yaml ./
 COPY apps/express-server/package.json apps/express-server/
-RUN pnpm install --frozen-lockfile --prod --ignore-scripts --filter ./apps/express-server...
+RUN pnpm install --frozen-lockfile --prod --ignore-scripts
 
 WORKDIR /app/apps/express-server
 
@@ -42,6 +48,5 @@ USER node
 EXPOSE 8000
 
 # pm2-runtime keeps pm2 in the foreground (see README.md) and forwards
-# SIGTERM to the app. nodeLinker=hoisted puts the binary in the workspace
-# root, not in the app.
-CMD ["/app/node_modules/.bin/pm2-runtime", "start", "ecosystem.config.js"]
+# SIGTERM to the app.
+CMD ["node_modules/.bin/pm2-runtime", "start", "ecosystem.config.js"]
