@@ -5,7 +5,10 @@
   "private": true,
   "scripts": {
     "prepare": "husky",
-    "dev": "turbo run dev --no-cache",
+    "common:build": "pnpm --filter common run build",
+    "nest": "pnpm --filter nestjs-server run dev",
+    "express": "pnpm run common:build && pnpm --filter express-server run dev",
+    "next": "pnpm run common:build && pnpm --filter next-client run dev",
     "build": "turbo run build",
     "lint": "turbo run lint",
     "prettier": "prettier \"{apps,packages}/**/*.{json,html,css,sass,scss}\" --write --ignore-unknown"
