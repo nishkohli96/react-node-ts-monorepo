@@ -29,14 +29,15 @@ jobs:
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build @core/lib
-        run: yarn lib:build
+      # express-server and next-client load the built dist/ of common.
+      - name: Build common
+        run: pnpm --filter common build
 
       - name: Build express-server
-        run: yarn workspace express-server build
+        run: pnpm --filter express-server build
 
       - name: Build nestjs-server
-        run: yarn workspace nestjs-server build
+        run: pnpm --filter nestjs-server build
 
       - name: Build next-client
-        run: yarn workspace next-client build
+        run: pnpm --filter next-client build

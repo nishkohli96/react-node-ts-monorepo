@@ -23,24 +23,34 @@ WORKDIR /app
 # Learn more here: https://nextjs.org/telemetry
 ENV NEXT_TELEMETRY_DISABLED=1
 
-# Only the workspace manifests + next-client's package.json are needed to
-# install next-client's dependencies; the root pnpm-lock.yaml covers all apps.
+# Only the workspace manifests + the package.json of next-client and of the
+# workspace package it depends on are needed to install its dependencies; the
+# root pnpm-lock.yaml covers all apps.
 FROM base AS builder
 
 COPY package.json pnpm-workspace.yaml pnpm-lock.yaml ./
+COPY packages/common/package.json packages/common/
 COPY apps/next-client/package.json apps/next-client/
 RUN pnpm install --frozen-lockfile
 
+# The `...` suffix builds the dependencies of the app (common -> dist/) before the app.
+# A path selector needs the braces, `./apps/x...` silently skips the dependencies.
+COPY packages/common packages/common
 COPY apps/next-client apps/next-client
-RUN pnpm --filter ./apps/next-client build
+RUN pnpm --filter "{./apps/next-client}..." build
 
 FROM base AS runner
 
 ENV NODE_ENV=production
 
+# common is loaded at runtime: its package.json lets pnpm resolve the workspace
+# link, its built dist/ is copied in below.
 COPY package.json pnpm-workspace.yaml pnpm-lock.yaml ./
+COPY packages/common/package.json packages/common/
 COPY apps/next-client/package.json apps/next-client/
 RUN pnpm install --frozen-lockfile --prod --ignore-scripts
+
+COPY --from=builder /app/packages/common/dist packages/common/dist
 
 WORKDIR /app/apps/next-client
 

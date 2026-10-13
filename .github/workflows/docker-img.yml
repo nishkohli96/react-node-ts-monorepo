@@ -20,7 +20,7 @@ jobs:
 
       - name: Get current date
         id: date
-        run: echo "::set-output name=date::$(date +'%Y_%m_%d_%H_%m')"
+        run: echo "date=$(date +'%Y_%m_%d_%H_%M')" >> "$GITHUB_OUTPUT"
 
       - name: Build express-server Image
         run: docker build -f ./apps/express-server/Dockerfile -t ${{secrets.DOCKER_HUB_USERNAME}}/express-server:${{ steps.date.outputs.date }} .
