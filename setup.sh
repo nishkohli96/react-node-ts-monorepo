@@ -9,7 +9,4 @@ command -v pnpm >/dev/null 2>&1 || npm i -g pnpm
 command -v ncu >/dev/null 2>&1 || npm i -g npm-check-updates
 
 pnpm install
-
-# build the shared lib first, then every app
-pnpm lib:build
 pnpm build

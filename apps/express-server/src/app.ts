@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import { ENV_CONFIG } from '@/constants';
-import { requestLogger } from '@/middleware';
+import { errorHandler, requestLogger } from '@/middleware';
 import { routesList } from '@/routes';
 import { sendErrorResponse } from '@/utils';
 
@@ -31,5 +31,8 @@ app.use((req, res) => {
     error: notFoundError,
   });
 });
+
+/* Error Handler - Must come after all the routes and the 404 handler */
+app.use(errorHandler);
 
 export default app;

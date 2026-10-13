@@ -2,7 +2,7 @@
 
 **The ideal repository for full-stack web development with NextJS as the frontend and ExpressJS, NestJS-fastify server as the backend.**
 
-You can clone the full repo and keep only the packages you need in your monorepo, or just retain the source code of a single app, say [express-server](./apps/express-server/) to get started. I'll try my level best to keep all the dependencies in these repos upto date, while also adhering to the industry best practices.  
+You can clone the full repo and keep only the packages you need in your monorepo. I'll try my level best to keep all the dependencies in these repos upto date, while also adhering to the industry best practices.  
 
 ## Features
 
@@ -26,7 +26,7 @@ The above command executes the `setup.sh` script to set up the project by:
 
 - Ensuring [pnpm](https://pnpm.io/) and [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) are installed globally.
 - Installing all dependencies.
-- Building `@core/lib` and then all the apps for the first time.
+- Building all the apps for the first time.
 
 Place the shared packages in the `packages` folder & the applications code in the `apps` folder.
 If you do not wish to use Turborepo, delete `turbo.json` and remove it from `devDependencies` of the package.json in the root directory.

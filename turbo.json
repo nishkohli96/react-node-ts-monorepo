@@ -1,14 +1,10 @@
 {
   "$schema": "https://turborepo.dev/schema.json",
   "tasks": {
-    "lib:build": {
-      "dependsOn": []
-    },
     "lint": {
       "dependsOn": []
     },
     "dev": {
-      "dependsOn": ["^lib:build"],
       "cache": false
     },
     "build": {

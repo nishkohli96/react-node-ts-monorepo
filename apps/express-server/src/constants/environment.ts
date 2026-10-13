@@ -6,6 +6,7 @@
 const env = process.env;
 
 export const ENV_CONFIG = Object.freeze({
-  env: env.NODE_ENV ?? 'development',
-  port: env.PORT ?? 8000
+  /* `||` so empty values (eg. a blank .env_sample entry) fall back too */
+  env: env.NODE_ENV || 'development',
+  port: Number(env.PORT) || 8000
 });

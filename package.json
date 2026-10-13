@@ -5,7 +5,6 @@
   "private": true,
   "scripts": {
     "prepare": "husky",
-    "lib:build": "pnpm --filter @core/lib lib:build",
     "dev": "turbo run dev --parallel --no-cache",
     "build": "turbo run build",
     "lint": "turbo run lint",

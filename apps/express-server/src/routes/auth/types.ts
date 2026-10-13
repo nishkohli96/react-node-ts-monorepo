@@ -4,4 +4,9 @@ export interface UserLoginBody {
   password: string;
 }
 
-export type UserLoginRequest = Request<object, object, UserLoginBody>;
+/* In Express 5, req.body is undefined unless a body parser matched the request. */
+export type UserLoginRequest = Request<
+  object,
+  object,
+  Partial<UserLoginBody> | undefined
+>;

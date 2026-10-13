@@ -24,6 +24,9 @@ import app from './app';
 const hostName = os.hostname();
 const { port, env } = ENV_CONFIG;
 
+/* Max time to let in-flight requests finish after SIGTERM / SIGINT */
+const SHUTDOWN_TIMEOUT_MS = 5000;
+
 function bootstrap() {
 
   /**
@@ -40,6 +43,16 @@ function bootstrap() {
       `[⚡️ ${env}@${hostName} ⚡️] - Server running on port ${port}`
     );
   });
+
+  /* Stop accepting connections, let in-flight requests finish, then exit. */
+  const shutdown = (signal: NodeJS.Signals) => {
+    winstonLogger.info(`${signal} received, shutting down...`);
+    server.close(() => process.exit(0));
+    server.closeIdleConnections();
+    setTimeout(() => process.exit(1), SHUTDOWN_TIMEOUT_MS).unref();
+  };
+  process.once('SIGTERM', shutdown);
+  process.once('SIGINT', shutdown);
 }
 
 bootstrap();

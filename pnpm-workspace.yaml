@@ -3,6 +3,7 @@ packages:
   - packages/*
 nodeLinker: hoisted
 allowBuilds:
+  '@parcel/watcher': false
   '@swc/core': true
   unrs-resolver: true
 minimumReleaseAgeExclude:
