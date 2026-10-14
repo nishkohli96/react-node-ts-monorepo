@@ -17,6 +17,7 @@
 import 'dotenv/config';
 import os from 'os';
 import { createServer } from 'node:http';
+import type { AddressInfo } from 'node:net';
 import { ENV_VARS } from '@/constants';
 import { winstonLogger } from '@/middleware';
 import app from './app';
@@ -40,7 +41,7 @@ function bootstrap() {
   const server = createServer(app);
   server.listen(port, () => {
     winstonLogger.info(
-      `[⚡️ ${env}@${hostName} ⚡️] - Server running on port ${port}`
+      `[⚡️ ${env}@${hostName} ⚡️] - Server running on port ${(server.address() as AddressInfo).port}`
     );
   });
 

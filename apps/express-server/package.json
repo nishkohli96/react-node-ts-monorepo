@@ -4,9 +4,6 @@
   "description": "Express v5 app with typescript",
   "author": "Nishant Kohli",
   "private": true,
-  "engines": {
-    "node": ">=18"
-  },
   "scripts": {
     "dev": "nodemon --exec 'ts-node -r tsconfig-paths/register src/index.ts'",
     "build": "rimraf dist && tsc && tsc-alias",
@@ -27,7 +24,7 @@
     "@nish1896/eslint-flat-config": "^3.1.6",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
-    "@types/node": "^26.6.5",
+    "@types/node": "^24",
     "eslint": "^9.39.1",
     "nodemon": "^3.1.14",
     "rimraf": "^6.1.3",

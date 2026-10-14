@@ -28,13 +28,15 @@ The above command executes the `setup.sh` script to set up the project by:
 - Installing all dependencies.
 - Building all the apps for the first time.
 
-Place the shared packages in the `packages` folder & the applications code in the `apps` folder. [`common`](./packages/common) holds the types, enums and helpers shared by `express-server` and `next-client`, it is compiled to `dist/` and `pnpm build` / `pnpm dev` build it before the apps.
+Place the shared packages in the `packages` folder & the applications code in the `apps` folder. [`common`](./packages/common) holds the types, enums and helpers shared by `express-server` and `next-client`, it is compiled to `dist/` and `pnpm build`, `pnpm express` and `pnpm next` build it before the apps.
 If you do not wish to use Turborepo, delete `turbo.json` and remove it from `devDependencies` of the package.json in the root directory.
 
-Start all the apps in dev mode,
+Start an app in dev mode (`express` and `next` build `common` first),
 
 ```bash
-pnpm dev
+pnpm next      # next-client
+pnpm express   # express-server
+pnpm nest      # nestjs-server
 ```
 
 Run a command in a specific workspace,

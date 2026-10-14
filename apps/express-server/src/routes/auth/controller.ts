@@ -17,7 +17,9 @@ authRouter.post(
     res: Response
   ) {
     const { email, password }: Partial<AuthTypes.UserLoginBody> = req.body ?? {};
-    if (typeof email !== 'string' || typeof password !== 'string') {
+    const hasEmail = typeof email === 'string' && email.trim() !== '';
+    const hasPassword = typeof password === 'string' && password !== '';
+    if (!hasEmail || !hasPassword) {
       return sendErrorResponse(res, {
         statusCode: 400,
         message: 'Bad Request',
