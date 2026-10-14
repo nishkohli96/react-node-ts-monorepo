@@ -10,17 +10,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
+        uses: docker/setup-qemu-action@v4
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
+        uses: docker/setup-buildx-action@v4
 
       - name: Get current date
         id: date
-        run: echo "::set-output name=date::$(date +'%Y_%m_%d_%H_%m')"
+        run: echo "date=$(date +'%Y_%m_%d_%H_%M')" >> "$GITHUB_OUTPUT"
 
       - name: Build express-server Image
         run: docker build -f ./apps/express-server/Dockerfile -t ${{secrets.DOCKER_HUB_USERNAME}}/express-server:${{ steps.date.outputs.date }} .
@@ -30,9 +30,6 @@ jobs:
 
       - name: Build next-client Image
         run: docker build -f ./apps/next-client/Dockerfile -t ${{ secrets.DOCKER_HUB_USERNAME }}/next-client:${{ steps.date.outputs.date }} .
-
-      - name: Build react-client Image
-        run: docker build -f ./apps/react-client/Dockerfile -t ${{ secrets.DOCKER_HUB_USERNAME }}/react-client:${{ steps.date.outputs.date }} .
 
       - name: Login to DockerHub
         uses: docker/login-action@v3
@@ -48,6 +45,3 @@ jobs:
 
       - name: Push next-client Image to Docker Hub
         run: docker push ${{ secrets.DOCKER_HUB_USERNAME }}/next-client:${{ steps.date.outputs.date }}
-      
-      - name: Push react-client Image to Docker Hub
-        run: docker push ${{ secrets.DOCKER_HUB_USERNAME }}/react-client:${{ steps.date.outputs.date }}

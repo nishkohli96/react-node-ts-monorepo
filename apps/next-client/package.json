@@ -2,33 +2,40 @@
   "name": "next-client",
   "version": "1.0.0",
   "author": "Nishant Kohli",
+  "description": "Next.js v16 app with Material-UI v9, Docker, and Tailwind CSS",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3001",
+    "dev": "next dev -p 3000",
     "build": "next build",
     "start": "next start",
-    "prod": "yarn run build && yarn run start",
-    "lint": "next lint --fix ."
+    "prod": "pnpm build && pnpm start",
+    "lint": "eslint --fix",
+    "lint:check": "eslint"
   },
   "dependencies": {
     "@emotion/cache": "^11.14.0",
     "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0",
-    "@mui/icons-material": "^7.0.1",
-    "@mui/material": "^7.0.1",
-    "@mui/material-nextjs": "^7.0.0",
-    "next": "15.2.4",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^9.5.0",
+    "@mui/material": "^9.5.0",
+    "@mui/material-nextjs": "^9.5.0",
+    "@nish1896/mui-components": "^2.3.1",
+    "common": "workspace:*",
+    "next": "16.4.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.1",
-    "@nish1896/eslint-flat-config": "^2.0.2",
-    "@types/node": "^22.13.14",
-    "@types/react": "^19.0.12",
-    "@types/react-dom": "^19.0.4",
-    "eslint": "^9.23.0",
-    "eslint-config-next": "15.2.4",
-    "typescript": "^5.8.2"
+    "@nish1896/eslint-flat-config": "^3.1.6",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^24",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "16.4.0",
+    "lint-staged": "^17.6.0",
+    "postcss": "^8.5.30",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^6.0.3"
   }
 }

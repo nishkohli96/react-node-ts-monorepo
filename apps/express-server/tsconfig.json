@@ -3,22 +3,24 @@
     "target": "ES2024",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "baseUrl": "./",
-    "outDir": "dist", 
-    "rootDir": "src", 
+    "types": ["node"],
+    "outDir": "dist",
+    "rootDir": "src",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["./src/*"]
     },
-    "esModuleInterop": true
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "dist"],
-	"tsc-alias": {
+  "tsc-alias": {
     "verbose": false,
     "resolveFullPaths": true,
     "fileExtensions": {
       "inputGlob": "{js,mjs,ts}",
       "outputCheck": ["js", "ts", "json", "jsx", "mjs"]
     }
-	}
+  }
 }

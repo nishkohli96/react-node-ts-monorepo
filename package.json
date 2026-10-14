@@ -3,29 +3,30 @@
   "author": "Nishant Kohli",
   "version": "1.0.0",
   "private": true,
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
+  "engines": {
+    "node": ">=24"
+  },
   "scripts": {
     "prepare": "husky",
-    "lib:build": "yarn workspace @core/lib lib:build",
-    "dev": "turbo run dev --parallel --no-cache",
+    "common:build": "pnpm --filter common run build",
+    "nest": "pnpm --filter nestjs-server run dev",
+    "express": "pnpm run common:build && pnpm --filter express-server run dev",
+    "next": "pnpm run common:build && pnpm --filter next-client run dev",
     "build": "turbo run build",
     "lint": "turbo run lint",
     "prettier": "prettier \"{apps,packages}/**/*.{json,html,css,sass,scss}\" --write --ignore-unknown"
   },
   "devDependencies": {
     "husky": "^9.1.7",
-    "lint-staged": "^15.5.0",
-    "prettier": "^3.5.3",
-    "turbo": "^2.4.4"
+    "lint-staged": "^17.6.0",
+    "prettier": "^3.9.10",
+    "turbo": "^2.11.8"
   },
   "lint-staged": {
     "*.{json,html,css,sass,scss}": [
       "prettier --write --ignore-unknown"
     ]
   },
-  "packageManager": "yarn@1.2.22",
+  "packageManager": "pnpm@11.20.0",
   "license": "ISC"
 }

@@ -17,12 +17,16 @@
 import 'dotenv/config';
 import os from 'os';
 import { createServer } from 'node:http';
-import { ENV_CONFIG } from '@/constants';
+import type { AddressInfo } from 'node:net';
+import { ENV_VARS } from '@/constants';
 import { winstonLogger } from '@/middleware';
 import app from './app';
 
 const hostName = os.hostname();
-const { port, env } = ENV_CONFIG;
+const { port, env } = ENV_VARS;
+
+/* Max time to let in-flight requests finish after SIGTERM / SIGINT */
+const SHUTDOWN_TIMEOUT_MS = 5000;
 
 function bootstrap() {
 
@@ -37,9 +41,19 @@ function bootstrap() {
   const server = createServer(app);
   server.listen(port, () => {
     winstonLogger.info(
-      `[⚡️ ${hostName}@${env} ⚡️] - Server running on port ${port}`
+      `[⚡️ ${env}@${hostName} ⚡️] - Server running on port ${(server.address() as AddressInfo).port}`
     );
   });
+
+  /* Stop accepting connections, let in-flight requests finish, then exit. */
+  const shutdown = (signal: NodeJS.Signals) => {
+    winstonLogger.info(`${signal} received, shutting down...`);
+    server.close(() => process.exit(0));
+    server.closeIdleConnections();
+    setTimeout(() => process.exit(1), SHUTDOWN_TIMEOUT_MS).unref();
+  };
+  process.once('SIGTERM', shutdown);
+  process.once('SIGINT', shutdown);
 }
 
 bootstrap();

@@ -15,9 +15,13 @@ export function sendErrorResponse(
     statusCode = 500,
   }: ErrorResponseOptions
 ) {
-  const errorMessage = error instanceof Error
-    ? error.message
-    : JSON.stringify(error);
+  /* JSON.stringify would wrap a plain string in an extra pair of quotes */
+  let errorMessage = String(error);
+  if (error instanceof Error) {
+    errorMessage = error.message;
+  } else if (typeof error === 'object' && error !== null) {
+    errorMessage = JSON.stringify(error);
+  }
 
   winstonLogger.error(`⚠ ERROR - ${errorMessage}`);
   return res.status(statusCode).json({

@@ -3,23 +3,23 @@
  * use this code snippet.
  */
 type PaginationConfig = {
-  records_per_page: number;
+  recordsPerPage: number;
   page: number;
 };
 
-export const DefaultPaginationOptions: PaginationConfig = {
-  records_per_page: 10,
+export const defaultPagination: PaginationConfig = {
+  recordsPerPage: 10,
   page: 1
 };
 
 export function getPaginationParams(
   page?: string,
-  records_per_page?: string
+  recordsPerPage?: string
 ): PaginationConfig {
   return {
-    records_per_page: records_per_page
-      ? Number(records_per_page)
-      : DefaultPaginationOptions.records_per_page,
-    page: page ? Number(page) : DefaultPaginationOptions.page
+    recordsPerPage: recordsPerPage
+      ? Number(recordsPerPage)
+      : defaultPagination.recordsPerPage,
+    page: page ? Number(page) : defaultPagination.page
   };
 }

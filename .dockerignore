@@ -1,26 +1,28 @@
 # folders
-node_modules
-test
+# **/ also matches apps/*/node_modules etc., plain names only match the context root
+**/node_modules
+**/test
 .github
 .husky
-.next
-.turbo
-.vercel
+**/.next
+**/.turbo
+**/.vercel
 
 # production
-build
-dist
-logs
-*.tsbuildinfo
+**/build
+**/dist
+**/logs
+**/*.tsbuildinfo
 
 # testing
-coverage
+**/coverage
 .nyc_output
 
 # misc
-.eslintrc
-.eslintrc.js
-.eslintignore
+**/eslint.config.mjs
+**/.env
+**/.env.*
+**/.env_sample
 .dockerignore
 .gitignore
 .prettierrc

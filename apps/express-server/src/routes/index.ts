@@ -3,7 +3,7 @@ import { authRouter } from './auth/controller';
 
 type RouteInfo = {
   path: string;
-	router: Router;
+  router: Router;
 };
 
 function generatePrefix(routeName: string) {

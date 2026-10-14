@@ -1,0 +1,19 @@
+packages:
+  - apps/*
+  - packages/*
+nodeLinker: hoisted
+allowBuilds:
+  '@parcel/watcher': false
+  '@swc/core': true
+  unrs-resolver: true
+overrides:
+  '@types/node': ^24
+minimumReleaseAgeExclude:
+  - '@nish1896/mui-components'
+  - '@turbo/darwin-64@2.11.8'
+  - '@turbo/darwin-arm64@2.11.8'
+  - '@turbo/linux-64@2.11.8'
+  - '@turbo/linux-arm64@2.11.8'
+  - '@turbo/windows-64@2.11.8'
+  - '@turbo/windows-arm64@2.11.8'
+  - turbo@2.11.8

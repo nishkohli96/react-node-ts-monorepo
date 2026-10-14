@@ -1,24 +1,47 @@
-# Base Image
-FROM node:22.14.0-alpine3.20 as phase1
+ARG NODE_VERSION=24
+ARG ALPINE_VERSION=3.23
+
+FROM node:${NODE_VERSION}-alpine${ALPINE_VERSION} AS base
+
+# ARGs declared before the first FROM are not visible inside stages
+ARG PNPM_VERSION=11.20.0
+
+RUN npm i -g pnpm@${PNPM_VERSION}
+
+# pnpm-workspace.yaml sets nodeLinker=hoisted, which installs every app in the
+# lockfile even when only one package.json is copied. Use the isolated layout
+# here instead (as an env var, so `pnpm build` below sees the same layout as
+# the install).
+ENV pnpm_config_node_linker=isolated
 
 WORKDIR /app
 
-# Run yarn only if package.json changes
-# copied tsconfig as nestjs-server's tsconfig extends rootDir's tsconfig
-COPY --chown=node:node turbo.json .
-COPY --chown=node:node tsconfig.json .
-COPY --chown=node:node package.json .
+# Only the workspace manifests + nestjs-server's package.json are needed to
+# install nestjs-server's dependencies; the root pnpm-lock.yaml covers all apps.
+FROM base AS builder
 
-# first create these directories, else the copying won't work.
-RUN mkdir -p apps/nestjs-server
+COPY package.json pnpm-workspace.yaml pnpm-lock.yaml ./
+COPY apps/nestjs-server/package.json apps/nestjs-server/
+RUN pnpm install --frozen-lockfile
 
-# copying only the required packages
-COPY --chown=node:node ./apps/nestjs-server/tsconfig.*.json apps/nestjs-server
-COPY --chown=node:node ./apps/nestjs-server/package.json apps/nestjs-server
-COPY --chown=node:node ./apps/nestjs-server apps/nestjs-server
+COPY apps/nestjs-server apps/nestjs-server
+RUN pnpm --filter ./apps/nestjs-server build
 
-# install node_modules
-RUN yarn
+FROM base AS runner
 
-# run server in prod env
-CMD ["yarn", "workspace", "nestjs-server", "prod"]
+ENV NODE_ENV=production
+
+COPY package.json pnpm-workspace.yaml pnpm-lock.yaml ./
+COPY apps/nestjs-server/package.json apps/nestjs-server/
+RUN pnpm install --frozen-lockfile --prod --ignore-scripts
+
+WORKDIR /app/apps/nestjs-server
+
+COPY --from=builder /app/apps/nestjs-server/dist ./dist
+
+USER node
+
+EXPOSE 4000
+
+# Run node directly (not via pnpm) so SIGTERM reaches the server process
+CMD ["node", "dist/main"]
