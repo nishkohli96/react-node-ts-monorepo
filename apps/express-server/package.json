@@ -5,7 +5,7 @@
   "author": "Nishant Kohli",
   "private": true,
   "scripts": {
-    "dev": "nodemon --exec 'ts-node -r tsconfig-paths/register src/index.ts'",
+    "dev": "nodemon --exec 'node -r ts-node/register -r tsconfig-paths/register src/index.ts'",
     "build": "rimraf dist && tsc && tsc-alias",
     "start": "pm2-runtime start ecosystem.config.js",
     "start:node": "node dist/index.js",

@@ -6,6 +6,8 @@ allowBuilds:
   '@parcel/watcher': false
   '@swc/core': true
   unrs-resolver: true
+overrides:
+  '@types/node': ^24
 minimumReleaseAgeExclude:
   - '@nish1896/mui-components'
   - '@turbo/darwin-64@2.11.8'
